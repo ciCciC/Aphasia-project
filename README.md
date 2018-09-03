@@ -10,15 +10,16 @@ Possibly, the rehabilition stress can be reduced by having patients do exercises
 
 # Installation guide
 
-First download the repo from Github.
-1. Create a Git folder
+First perform the following steps, see below
+1. Create a new folder and name it 'Git'
 
 2. Download and install Git from the link below<br>
 [MAC] : https://git-scm.com/download/mac <br>
 [WINDOWS] : https://git-scm.com/download/win
 
 2. Enter the following on the terminal / command prompt (This will download de repo)
-git clone https://github.com/ciCciC/Aphasia-project.git
+2.1 cd <i>PATH TO YOUR FOLDER
+2.2 git clone https://github.com/ciCciC/Aphasia-project.git
 
 
 **MAC**
