@@ -44,5 +44,5 @@ Download get-pip.py from <a href="https://pip.pypa.io/en/stable/installing/">HER
 
 **After installing PyCharm, Python and Pip please see below**
 
-1. Install Google Cloud Speech from the **terminal of your PyCharm SDK**
+1. Install Google Cloud Speech from the **terminal of your PyCharm SDK**<br>
 pip install --upgrade google-cloud-speech
