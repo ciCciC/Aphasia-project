@@ -8,9 +8,7 @@ import os
 import io
 import glob
 import wave
-
-from Audio import ConfigAudio
-from resources import Credentials
+import Credentials
 
 class AudioTranscribe:
 
