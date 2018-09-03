@@ -93,7 +93,7 @@ class AudioTranscribe:
 
             responses = client.streaming_recognize(streaming_config, requests)
 
-            text = []
+            textDict = []
 
             for response in responses:
                 for result in response.results:
@@ -106,14 +106,15 @@ class AudioTranscribe:
                             end_time = word_info.end_time
                             print('Word: {}, start_time: {}, end_time: {}'.format(
                                 word,
-                                start_time.seconds + start_time.nanos * 1e-9,
-                                end_time.seconds + end_time.nanos * 1e-9))
+                                start_time.seconds,
+                                end_time.seconds))
+
+                            textDict.append({'word': word, 'starttime': str(start_time), 'endtime': str(end_time)})
 
                         # print(u'Transcript: {}'.format(alternative.transcript))
                         # text.append(alternative.transcript + '\n')
-
-                        text.append(str(start_time/60) + " - " + str(end_time/60) + " - " + str(word) + "\n")
-        return text
+                        # text.append(str(start_time) + " - " + str(end_time) + " - " + str(word) + "\n")
+        return textDict
 
     @staticmethod
     def getAudioFiles():
