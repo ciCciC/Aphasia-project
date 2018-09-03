@@ -11,7 +11,7 @@ from google.cloud.speech import enums
 from google.cloud.speech import types
 from google.oauth2 import service_account
 
-from resources import Credentials
+import Credentials
 
 credentials = service_account.Credentials.from_service_account_file(Credentials.Credentials.cred())
 

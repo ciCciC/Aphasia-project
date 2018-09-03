@@ -27,7 +27,7 @@ class AudioTranscribe:
         audio = types.RecognitionAudio(uri='gs://aphasiaproject/'+ConfigAudio.filename)
 
         config = types.RecognitionConfig(
-            encoding=ConfigAudio.audioEncoding,
+            encoding=enums.RecognitionConfig.AudioEncoding.FLAC,
             sample_rate_hertz=ConfigAudio.hertz,
             profanity_filter=True,
             language_code=ConfigAudio.languageCode)
@@ -84,9 +84,10 @@ class AudioTranscribe:
                         for chunk in chuncks)
 
             config = types.RecognitionConfig(
-                encoding=ConfigAudio.audioEncoding,
+                encoding=enums.RecognitionConfig.AudioEncoding.LINEAR16,
                 sample_rate_hertz=ConfigAudio.hertz,
-                language_code=ConfigAudio.languageCode)
+                language_code=ConfigAudio.languageCode,
+                enable_word_time_offsets=True)
 
             streaming_config = types.StreamingRecognitionConfig(config=config)
 
@@ -98,8 +99,20 @@ class AudioTranscribe:
                 for result in response.results:
                     print('Finished: {}'.format(result.is_final))
                     for alternative in result.alternatives:
-                        print(u'Transcript: {}'.format(alternative.transcript))
-                        text.append(alternative.transcript + '\n')
+
+                        for word_info in alternative.words:
+                            word = word_info.word
+                            start_time = word_info.start_time
+                            end_time = word_info.end_time
+                            print('Word: {}, start_time: {}, end_time: {}'.format(
+                                word,
+                                start_time.seconds + start_time.nanos * 1e-9,
+                                end_time.seconds + end_time.nanos * 1e-9))
+
+                        # print(u'Transcript: {}'.format(alternative.transcript))
+                        # text.append(alternative.transcript + '\n')
+
+                        text.append(str(start_time/60) + " - " + str(end_time/60) + " - " + str(word) + "\n")
         return text
 
     @staticmethod
