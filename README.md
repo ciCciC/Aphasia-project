@@ -17,8 +17,8 @@ First perform the following steps, see below
 [MAC] : https://git-scm.com/download/mac <br>
 [WINDOWS] : https://git-scm.com/download/win
 
-2. Enter the following on the terminal / command prompt (This will download de repo)
-2.1 cd <i>PATH TO YOUR FOLDER
+2. Enter the following on the terminal / command prompt (This will download de repo)<br>
+2.1 cd <i>PATH TO YOUR FOLDER <br>
 2.2 git clone https://github.com/ciCciC/Aphasia-project.git
 
 
