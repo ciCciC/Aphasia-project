@@ -1,8 +1,10 @@
 
+
 from google.cloud import speech
 from google.cloud.speech import enums
 from google.cloud.speech import types
 from google.oauth2 import service_account
+
 
 import os
 import io

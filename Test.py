@@ -21,15 +21,3 @@ a = glob.glob(os.path.join(
 print(a)
 
 print(filepath.title())
-
-# print(filepath.title())
-
-import subprocess
-
-ff = FFmpeg(inputs={filepath.title(): None}, outputs={'output.wav': "-ab 160k -ac 2 -ar 44100 -vn"})
-
-# ff.run()
-
-command = "./ffmpeg -i " + a[0] + " -ab 160k -ac 2 -ar 44100 -vn audio.wav"
-
-subprocess.call(command, shell=True)
