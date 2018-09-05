@@ -39,7 +39,7 @@ Download get-pip.py from <a href="https://pip.pypa.io/en/stable/installing/">HER
 1. Download and install PyCharm<br>
 https://www.jetbrains.com/pycharm/
 
-2. Download the latest Python version
+2. Download the latest Python version<br>
 https://www.python.org/downloads/windows/
 
 3. Install Pip only if you dont have it **Pip is mostly installed after installing Python**<br>
