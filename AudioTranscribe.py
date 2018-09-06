@@ -3,9 +3,6 @@
 from google.cloud import speech
 from google.cloud.speech import enums
 from google.cloud.speech import types
-from google.oauth2 import service_account
-
-
 import os
 import io
 import glob
@@ -47,6 +44,7 @@ class AudioTranscribe:
                 text.append(alternative.transcript)
 
         return text
+
 
     @staticmethod
     def fromAudioFile(ConfigAudio):
@@ -97,6 +95,7 @@ class AudioTranscribe:
 
             textDict = []
 
+            # Get all responses and words of each response and timespan of each word
             for response in responses:
                 for result in response.results:
                     print('Finished: {}'.format(result.is_final))
@@ -118,7 +117,8 @@ class AudioTranscribe:
                         # text.append(str(start_time) + " - " + str(end_time) + " - " + str(word) + "\n")
         return textDict
 
+
     @staticmethod
-    def getAudioFiles():
+    def getAudioFiles(fileExtension):
         return glob.glob(os.path.join(
-            os.path.dirname(__file__), 'audio/','*.wav'))
+            os.path.dirname(__file__), 'audio/','*.'+fileExtension))
