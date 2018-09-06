@@ -1,11 +1,6 @@
-import math
 
 from pydub import AudioSegment
-from pydub.silence import split_on_silence
-import pydub
-import io
 import os
-import glob
 import numpy as np
 from matplotlib import pyplot as plt
 
