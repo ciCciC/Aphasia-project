@@ -1,5 +1,4 @@
 
-
 from google.cloud import speech
 from google.cloud.speech import enums
 from google.cloud.speech import types
@@ -8,6 +7,7 @@ import io
 import glob
 import wave
 import Credentials
+
 
 class AudioTranscribe:
 
