@@ -140,11 +140,13 @@ class AudioTranscribe:
 
         client = speech.SpeechClient(credentials=Credentials.Credentials.getCredentials())
 
+        # TODO : maybe a new class with these as attributes and use the class as second parameter for this method....?
         start = 0
         end = 60000
         MINUTE = 60000
         interval = 500
         silence_thresh = -40
+
 
         chunks = AudioTranscribe.runSlicing(sound, start, end, interval, silence_thresh, MINUTE)
 
