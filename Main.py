@@ -31,8 +31,8 @@ def main():
 
 # main()
 
-AudioTranscribe.AudioTranscribe.testFromAudioAsync(Audio('aphasiapatientW.wav', 16000, 'nl-NL'))
+# AudioTranscribe.AudioTranscribe.testFromAudioAsync(Audio('aphasiapatientW.wav', 16000, 'nl-NL'))
 
-# print(AudioTranscribe.AudioTranscribe.fromGoogleStorage(Audio('aphasiapatient.flac', 16000, 'en-GB', enums.RecognitionConfig.AudioEncoding.FLAC)))
-#
-# AudioTranscribe.AudioTranscribe.fromAudioFile(Audio('aphasiapatientW.wav', 16000, 'en-GB', enums.RecognitionConfig.AudioEncoding.LINEAR16))
+# print(AudioTranscribe.AudioTranscribe.fromGoogleStorage(Audio('aphasiapatient.flac', 16000, 'en-GB')))
+
+AudioTranscribe.AudioTranscribe.fromAudioFile(Audio('aphasiapatientW.wav', 16000, 'en-GB'))

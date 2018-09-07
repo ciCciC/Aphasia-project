@@ -1,4 +1,4 @@
-
+import grpc
 from google.cloud import speech
 from google.cloud.speech import enums
 from google.cloud.speech import types
@@ -91,30 +91,43 @@ class AudioTranscribe:
 
             streaming_config = types.StreamingRecognitionConfig(config=config)
 
+            #     try:
+            # ...
+            # x = int(input("Please enter a number: "))
+            # ...
+            # break
+            # ...     except ValueError:
+
+            print("Oops!  That was no valid number.  Try again...")
+
             responses = client.streaming_recognize(streaming_config, requests)
 
             textDict = []
 
-            # Get all responses and words of each response and timespan of each word
-            for response in responses:
-                for result in response.results:
-                    print('Finished: {}'.format(result.is_final))
-                    for alternative in result.alternatives:
+            try:
+                # Get all responses and words of each response and timespan of each word
+                for response in responses:
+                    for result in response.results:
+                        print('Finished: {}'.format(result.is_final))
+                        for alternative in result.alternatives:
 
-                        for word_info in alternative.words:
-                            word = word_info.word
-                            start_time = word_info.start_time
-                            end_time = word_info.end_time
-                            print('Word: {}, start_time: {}, end_time: {}'.format(
-                                word,
-                                start_time.seconds,
-                                end_time.seconds))
+                            for word_info in alternative.words:
+                                word = word_info.word
+                                start_time = word_info.start_time
+                                end_time = word_info.end_time
+                                print('Word: {}, start_time: {}, end_time: {}'.format(
+                                    word,
+                                    start_time.seconds,
+                                    end_time.seconds))
 
-                            textDict.append({'word': word, 'starttime': str(start_time), 'endtime': str(end_time)})
+                                textDict.append({'word': word, 'starttime': str(start_time), 'endtime': str(end_time)})
 
-                        # print(u'Transcript: {}'.format(alternative.transcript))
-                        # text.append(alternative.transcript + '\n')
-                        # text.append(str(start_time) + " - " + str(end_time) + " - " + str(word) + "\n")
+                            # print(u'Transcript: {}'.format(alternative.transcript))
+                            # text.append(alternative.transcript + '\n')
+                            # text.append(str(start_time) + " - " + str(end_time) + " - " + str(word) + "\n")
+
+            except:
+                print('The last chunk is above 60 seconds.')
         return textDict
 
 
