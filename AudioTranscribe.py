@@ -6,6 +6,9 @@ import os
 import io
 import glob
 import wave
+
+from pydub import AudioSegment
+
 import Credentials
 
 
@@ -74,14 +77,16 @@ class AudioTranscribe:
             CHUNK_MEMORY = (contentSize / audioDuration) * CHUNCK_TIME
             count = 0
 
-            chuncks = []
+            chunks = []
 
             while count < audioDuration:
-                chuncks.append(audio_file.read(int(CHUNK_MEMORY)))
+                chunks.append(audio_file.read(int(CHUNK_MEMORY)))
                 count += CHUNCK_TIME
 
+
+
             requests = (types.StreamingRecognizeRequest(audio_content=chunk)
-                        for chunk in chuncks)
+                        for chunk in chunks)
 
             config = types.RecognitionConfig(
                 encoding=enums.RecognitionConfig.AudioEncoding.LINEAR16,
@@ -90,13 +95,6 @@ class AudioTranscribe:
                 enable_word_time_offsets=True)
 
             streaming_config = types.StreamingRecognitionConfig(config=config)
-
-            #     try:
-            # ...
-            # x = int(input("Please enter a number: "))
-            # ...
-            # break
-            # ...     except ValueError:
 
             print("Oops!  That was no valid number.  Try again...")
 
@@ -129,6 +127,122 @@ class AudioTranscribe:
             except:
                 print('The last chunk is above 60 seconds.')
         return textDict
+
+
+    @staticmethod
+    def transcribeFromSlicedAudio(ConfigAudio):
+
+        file_name = os.path.join(
+            os.path.dirname(__file__),
+            'audio', ConfigAudio.filename)
+
+        sound = AudioSegment.from_wav(file_name)
+
+        client = speech.SpeechClient(credentials=Credentials.Credentials.getCredentials())
+
+        start = 0
+        end = 60000
+        MINUTE = 60000
+        interval = 500
+        silence_thresh = -40
+
+        chunks = AudioTranscribe.runSlicing(sound, start, end, interval, silence_thresh, MINUTE)
+
+        requests = (types.StreamingRecognizeRequest(audio_content=chunk)
+                    for chunk in chunks)
+
+        config = types.RecognitionConfig(
+            encoding=enums.RecognitionConfig.AudioEncoding.LINEAR16,
+            sample_rate_hertz=ConfigAudio.hertz,
+            language_code=ConfigAudio.languageCode,
+            enable_word_time_offsets=True)
+
+        streaming_config = types.StreamingRecognitionConfig(config=config)
+
+        print("Oops!  That was no valid number.  Try again...")
+
+        responses = client.streaming_recognize(streaming_config, requests)
+
+        try:
+            # Get all responses and words of each response and timespan of each word
+            for response in responses:
+                for result in response.results:
+                    print('Finished: {}'.format(result.is_final))
+                    for alternative in result.alternatives:
+
+                        for word_info in alternative.words:
+                            word = word_info.word
+                            start_time = word_info.start_time
+                            end_time = word_info.end_time
+                            print('Word: {}, start_time: {}, end_time: {}'.format(word, start_time.seconds, end_time.seconds))
+
+        except:
+            print('The last chunk is above 60 seconds.')
+
+
+    @staticmethod
+    def runSlicing(sound, start, end, interval, silence_thresh, MINUTE):
+        times = 1
+        tmpStart = 0
+        chunks = []
+
+        while start < (sound.duration_seconds * 1000):
+
+            slicedAudio = AudioTranscribe.getSlicedAudio(sound, start, end, interval, silence_thresh)
+
+            audiochunk = slicedAudio['audiochunk']
+            leftpointer = slicedAudio['leftpointer']
+            rightpointer = slicedAudio['rightpointer']
+
+            if tmpStart != leftpointer:
+                tmpStart = leftpointer
+            else:
+                times += 1
+                if times == 2:
+                    return chunks
+
+            start = leftpointer
+
+            end = (leftpointer + MINUTE) if (leftpointer + MINUTE) < (sound.duration_seconds * 1000) else (
+                        sound.duration_seconds * 1000)
+            end = int(end)
+
+            chunks.append(audiochunk.raw_data)
+            # chunks.append(audiochunk)
+
+
+    @staticmethod
+    def getSlicedAudio(sound, start, end, interval, silence_thresh):
+        """
+        Method to loop backwards until a silence point is been found then it will return a sub audio from start till silence point
+        :param sound: original audio file
+        :param start: start of the sub audio
+        :param end: is start + 1 minute
+        :param interval: interval of a sub audio in milliseconds
+        :param silence_thresh: to address where to slice
+        :return: Dict with sub audio, leftpointer (end of de sub audio) and rightpointer
+        """
+
+        jumptLeft = 500
+
+        print('starttime:{} - endtime:{}'.format(start, end))
+
+        for right in range(end, start, -interval):
+
+            tmpJumpLeft = right-jumptLeft
+
+            audio_slice = sound[tmpJumpLeft: right]
+
+            if audio_slice.dBFS < silence_thresh or audio_slice.dBFS == -float('inf'):
+                # print('dBFS:{} - starttime:{} - endtime:{}'.format(audio_slice.dBFS, tmpJumpLeft, right))
+                return {'audiochunk': sound[start: tmpJumpLeft], 'leftpointer': tmpJumpLeft, 'rightpointer': right}
+
+
+    @staticmethod
+    def exportAudio(audio, filepath, fileName, format):
+        if filepath[-1] != '/':
+            raise ValueError('Forgot to add / or \\ behind the Filepath.')
+        audio.export(filepath + fileName + '.' + format, format=format)
 
 
     @staticmethod

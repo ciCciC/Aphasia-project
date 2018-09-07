@@ -6,17 +6,17 @@ from matplotlib import pyplot as plt
 
 class Test:
 
-    file_name = os.path.join(
-                os.path.dirname(__file__),
-                'audio', 'aphasiapatientW.wav')
-
-    sound = AudioSegment.from_wav(file_name)
-
-    start = 0
-    end = 60000
-    MINUTE = 60000
-    interval = 500
-    silence_thresh = -40
+    # file_name = os.path.join(
+    #             os.path.dirname(__file__),
+    #             'audio', 'aphasiapatientW.wav')
+    #
+    # sound = AudioSegment.from_wav(file_name)
+    #
+    # start = 0
+    # end = 60000
+    # MINUTE = 60000
+    # interval = 500
+    # silence_thresh = -40
 
     @staticmethod
     def getSlicedAudio(sound, start, end, interval, silence_thresh):
@@ -29,7 +29,10 @@ class Test:
         :param silence_thresh: to address where to slice
         :return: Dict with sub audio, leftpointer (end of de sub audio) and rightpointer
         """
-        jumptLeft = interval
+
+        jumptLeft = 500
+
+        print('starttime:{} - endtime:{}'.format(start, end))
 
         for right in range(end, start, -interval):
 
@@ -37,14 +40,15 @@ class Test:
 
             audio_slice = sound[tmpJumpLeft: right]
 
-            if audio_slice.dBFS == -float('inf') or audio_slice.dBFS < silence_thresh:
-                print('dBFS:{} - starttime:{} - endtime:{}'.format(audio_slice.dBFS, tmpJumpLeft, right))
+            if audio_slice.dBFS < silence_thresh or audio_slice.dBFS == -float('inf'):
+                # print('dBFS:{} - starttime:{} - endtime:{}'.format(audio_slice.dBFS, tmpJumpLeft, right))
                 return {'audiochunk': sound[start: tmpJumpLeft], 'leftpointer': tmpJumpLeft, 'rightpointer': right}
 
 
     @staticmethod
     def runSlicing(sound, start, end, interval, silence_thresh, MINUTE):
-
+        times = 1
+        tmpStart = 0
         chunks = []
 
         while start < (sound.duration_seconds * 1000):
@@ -55,12 +59,19 @@ class Test:
             leftpointer = slicedAudio['leftpointer']
             rightpointer = slicedAudio['rightpointer']
 
-            # TODO controleer de START = leftpointer en de END
+            if tmpStart != leftpointer:
+                tmpStart = leftpointer
+            else:
+                times += 1
+                if times == 2:
+                    return
+
             start = leftpointer
 
-            end = (leftpointer + Test.MINUTE) if (leftpointer + MINUTE) < (sound.duration_seconds * 1000) else (sound.duration_seconds * 1000)
+            end = (leftpointer + MINUTE) if (leftpointer + MINUTE) < (sound.duration_seconds * 1000) else (sound.duration_seconds * 1000)
+            end = int(end)
 
-            chunks.append(audiochunk)
+            chunks.append(audiochunk.raw_data)
 
 
     @staticmethod

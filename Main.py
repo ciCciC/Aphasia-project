@@ -1,6 +1,11 @@
+import os
+
+from pydub import AudioSegment
 
 import AudioTranscribe
 from Audio import Audio
+from Test import Test
+
 
 def main():
     """
@@ -35,4 +40,6 @@ def main():
 
 # print(AudioTranscribe.AudioTranscribe.fromGoogleStorage(Audio('aphasiapatient.flac', 16000, 'en-GB')))
 
-AudioTranscribe.AudioTranscribe.fromAudioFile(Audio('aphasiapatientW.wav', 16000, 'en-GB'))
+# AudioTranscribe.AudioTranscribe.fromAudioFile(Audio('aphasiapatientW.wav', 16000, 'en-GB'))
+
+AudioTranscribe.AudioTranscribe.transcribeFromSlicedAudio(Audio('aphasiapatientW.wav', 16000, 'en-GB'))
