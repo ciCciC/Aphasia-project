@@ -130,33 +130,31 @@ class AudioTranscribe:
 
 
     @staticmethod
-    def transcribeFromSlicedAudio(ConfigAudio):
+    def transcribeFromSlicedAudio(configAudio, configSlicing):
 
         file_name = os.path.join(
             os.path.dirname(__file__),
-            'audio', ConfigAudio.filename)
+            'audio', configAudio.filename)
 
         sound = AudioSegment.from_wav(file_name)
 
         client = speech.SpeechClient(credentials=Credentials.Credentials.getCredentials())
 
-        # TODO : maybe a new class with these as attributes and use the class as second parameter for this method....?
-        start = 0
-        end = 60000
-        MINUTE = 60000
-        interval = 500
-        silence_thresh = -40
+        # start = 0
+        # end = 60000
+        # MINUTE = 60000
+        # interval = 500
+        # silence_thresh = -40
 
-
-        chunks = AudioTranscribe.runSlicing(sound, start, end, interval, silence_thresh, MINUTE)
+        chunks = AudioTranscribe.__runSlicing(sound=sound, configSlicing=configSlicing)
 
         requests = (types.StreamingRecognizeRequest(audio_content=chunk)
                     for chunk in chunks)
 
         config = types.RecognitionConfig(
             encoding=enums.RecognitionConfig.AudioEncoding.LINEAR16,
-            sample_rate_hertz=ConfigAudio.hertz,
-            language_code=ConfigAudio.languageCode,
+            sample_rate_hertz=configAudio.hertz,
+            language_code=configAudio.languageCode,
             enable_word_time_offsets=True)
 
         streaming_config = types.StreamingRecognitionConfig(config=config)
@@ -183,18 +181,30 @@ class AudioTranscribe:
 
 
     @staticmethod
-    def runSlicing(sound, start, end, interval, silence_thresh, MINUTE):
+    def __runSlicing(sound, configSlicing):
+        """
+
+        :param sound: The audio file to be sliced
+        :param configSlicing: The config for slicing
+        :return: list of audio chunks
+        """
         times = 1
         tmpStart = 0
         chunks = []
 
+        start = configSlicing.start
+        end = configSlicing.end
+
         while start < (sound.duration_seconds * 1000):
 
-            slicedAudio = AudioTranscribe.getSlicedAudio(sound, start, end, interval, silence_thresh)
+            slicedAudio = AudioTranscribe.__getSlicedAudio(sound,
+                                                         start,
+                                                         end,
+                                                         configSlicing.interval,
+                                                         configSlicing.silence_thresh)
 
             audiochunk = slicedAudio['audiochunk']
             leftpointer = slicedAudio['leftpointer']
-            rightpointer = slicedAudio['rightpointer']
 
             if tmpStart != leftpointer:
                 tmpStart = leftpointer
@@ -205,16 +215,14 @@ class AudioTranscribe:
 
             start = leftpointer
 
-            end = (leftpointer + MINUTE) if (leftpointer + MINUTE) < (sound.duration_seconds * 1000) else (
-                        sound.duration_seconds * 1000)
-            end = int(end)
+            end = int((leftpointer + configSlicing.minute) if (leftpointer + configSlicing.minute) < (sound.duration_seconds * 1000) else (
+                        sound.duration_seconds * 1000))
 
             chunks.append(audiochunk.raw_data)
-            # chunks.append(audiochunk)
 
 
     @staticmethod
-    def getSlicedAudio(sound, start, end, interval, silence_thresh):
+    def __getSlicedAudio(sound, start, end, interval, silence_thresh):
         """
         Method to loop backwards until a silence point is been found then it will return a sub audio from start till silence point
         :param sound: original audio file
@@ -225,7 +233,7 @@ class AudioTranscribe:
         :return: Dict with sub audio, leftpointer (end of de sub audio) and rightpointer
         """
 
-        jumptLeft = 500
+        jumptLeft = interval
 
         print('starttime:{} - endtime:{}'.format(start, end))
 
@@ -237,7 +245,7 @@ class AudioTranscribe:
 
             if audio_slice.dBFS < silence_thresh or audio_slice.dBFS == -float('inf'):
                 # print('dBFS:{} - starttime:{} - endtime:{}'.format(audio_slice.dBFS, tmpJumpLeft, right))
-                return {'audiochunk': sound[start: tmpJumpLeft], 'leftpointer': tmpJumpLeft, 'rightpointer': right}
+                return {'audiochunk': sound[start: tmpJumpLeft], 'leftpointer': tmpJumpLeft}
 
 
     @staticmethod
