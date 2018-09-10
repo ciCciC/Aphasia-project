@@ -25,7 +25,7 @@ file_path = os.path.join(
 #
 # signal = contentSize
 # signal = np.fromstring(signal, 'Int16')
-#
+
 # plt.figure(1)
 # plt.title('Signal Wave...')
 # plt.plot(signal)
