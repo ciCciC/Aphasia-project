@@ -36,10 +36,10 @@ pip -V<br>
 Download get-pip.py from <a href="https://pip.pypa.io/en/stable/installing/">HERE</a> to a folder on your computer. Open terminal and navigate to the folder containing get-pip.py. Then run python get-pip.py. This will install pip.
 
 **WINDOWS**
-1. Install Client Library<br>
-pip install --upgrade google-cloud-speech
+1. Download and install PyCharm<br>
+https://www.jetbrains.com/pycharm/
 
-2. Download the latest Python version
+2. Download the latest Python version<br>
 https://www.python.org/downloads/windows/
 
 3. Install Pip only if you dont have it **Pip is mostly installed after installing Python**<br>
