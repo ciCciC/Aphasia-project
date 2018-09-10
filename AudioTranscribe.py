@@ -246,16 +246,3 @@ class AudioTranscribe:
             if audio_slice.dBFS < silence_thresh or audio_slice.dBFS == -float('inf'):
                 # print('dBFS:{} - starttime:{} - endtime:{}'.format(audio_slice.dBFS, tmpJumpLeft, right))
                 return {'audiochunk': sound[start: tmpJumpLeft], 'leftpointer': tmpJumpLeft}
-
-
-    @staticmethod
-    def exportAudio(audio, filepath, fileName, format):
-        if filepath[-1] != '/':
-            raise ValueError('Forgot to add / or \\ behind the Filepath.')
-        audio.export(filepath + fileName + '.' + format, format=format)
-
-
-    @staticmethod
-    def getAudioFiles(fileExtension):
-        return glob.glob(os.path.join(
-            os.path.dirname(__file__), 'audio/','*.'+fileExtension))
