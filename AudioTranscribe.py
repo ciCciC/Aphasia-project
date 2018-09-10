@@ -26,7 +26,7 @@ class AudioTranscribe:
 
         client = speech.SpeechClient(credentials=Credentials.Credentials.getCredentials())
 
-        audio = types.RecognitionAudio(uri='gs://aphasiaproject/'+ConfigAudio.filename)
+        audio = types.RecognitionAudio(uri='gs://aphasiaproject/'+ConfigAudio.filename.split('/')[-1])
 
         config = types.RecognitionConfig(
             encoding=enums.RecognitionConfig.AudioEncoding.FLAC,
@@ -83,8 +83,6 @@ class AudioTranscribe:
                 chunks.append(audio_file.read(int(CHUNK_MEMORY)))
                 count += CHUNCK_TIME
 
-
-
             requests = (types.StreamingRecognizeRequest(audio_content=chunk)
                         for chunk in chunks)
 
@@ -139,12 +137,6 @@ class AudioTranscribe:
         sound = AudioSegment.from_wav(file_name)
 
         client = speech.SpeechClient(credentials=Credentials.Credentials.getCredentials())
-
-        # start = 0
-        # end = 60000
-        # MINUTE = 60000
-        # interval = 500
-        # silence_thresh = -40
 
         chunks = AudioTranscribe.__runSlicing(sound=sound, configSlicing=configSlicing)
 

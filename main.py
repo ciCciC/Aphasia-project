@@ -20,6 +20,11 @@ def main():
     for i, x in enumerate(files):
         print(str(i + 1) + ') ' + x.title())
 
+    filepath = ''
+    hertz = 0
+    languageCode = ''
+    chooseMethod = 0
+
     # When the user provides system arguments at script startup, use those instead.
     if len(sys.argv) > 1:
         filepath = sys.argv[1]
@@ -40,8 +45,6 @@ def main():
         AudioTranscribe.AudioTranscribe.fromAudioFile(Audio(filepath, hertz, languageCode))
 
     elif chooseMethod == 3:
-
-        #TODO : a second terminal user interface for ConfigSlicing parameters
         AudioTranscribe.AudioTranscribe.transcribeFromSlicedAudio(
             configAudio=Audio(filepath, hertz, languageCode),
             configSlicing=ConfigSlicing(0, 60000, 60000, 500, -40))
@@ -56,8 +59,6 @@ def main():
 
 
 main()
-
-# AudioTranscribe.AudioTranscribe.testFromAudioAsync(Audio('aphasiapatientW.wav', 16000, 'nl-NL'))
 
 # print(AudioTranscribe.AudioTranscribe.fromGoogleStorage(Audio('aphasiapatient.flac', 16000, 'en-GB')))
 
