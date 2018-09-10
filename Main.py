@@ -1,13 +1,24 @@
+
+import glob
+import os
 import AudioTranscribe
 from Audio import Audio
+from ConfigSlicing import ConfigSlicing
 
 import sys
 
 def main():
     """
-    To run the Main file from the terminal
-    :return:
+    A user input interface for terminal
     """
+
+    # Import all audio files from audio folder
+    files = glob.glob(os.path.join(
+        os.path.dirname(__file__), 'audio/', '*.' + '*'))
+
+    # show all audio files
+    for i, x in enumerate(files):
+        print(str(i + 1) + ') ' + x.title())
 
     # When the user provides system arguments at script startup, use those instead.
     if len(sys.argv) > 1:
@@ -16,29 +27,35 @@ def main():
         languageCode = sys.argv[3]
         chooseMethod = int(sys.argv[4])
     else:
-        filepath = input('Enter filepath \n')
-        hertz = int(input('Enter hertz \n'))
+        filepath = files[int(input("Press the number of the audio file \n")) - 1]
+        hertz = int(input('Enter hertz E.G. 16000 \n'))
         languageCode = input('Enter language code E.G. nl-NL or en-GB \n')
-        chooseMethod = int(input('1: Google Storage 2: Audio file Sliced 3: Audio file Async \n'))
+        chooseMethod = int(input('1) Google Storage audio \n2) Audio file Sliced \n3) Audio file Async \n'))
 
-    # TODO if else statements, maybe switch-case statement ... ?
+
     if chooseMethod == 1:
-        # TODO filepath
-        print(AudioTranscribe.AudioTranscribe.fromGoogleStorage(Audio('aphasiapatient.flac', hertz, languageCode)))
+        AudioTranscribe.AudioTranscribe.fromGoogleStorage(Audio(filepath, hertz, languageCode))
+
     elif chooseMethod == 2:
-        # TODO filepath
-        AudioTranscribe.AudioTranscribe.fromAudioFile(Audio('aphasiapatientW.wav', hertz, languageCode))
+        AudioTranscribe.AudioTranscribe.fromAudioFile(Audio(filepath, hertz, languageCode))
+
     elif chooseMethod == 3:
-        # TODO filepath
-        AudioTranscribe.AudioTranscribe.testFromAudioAsync(Audio('aphasiapatientW.wav', hertz, languageCode))
+
+        #TODO : a second terminal user interface for ConfigSlicing parameters
+        AudioTranscribe.AudioTranscribe.transcribeFromSlicedAudio(
+            configAudio=Audio(filepath, hertz, languageCode),
+            configSlicing=ConfigSlicing(0, 60000, 60000, 500, -40))
+
     else:
         print('Something went wrong, please choose [1] or [2] or for exit [q]')
         if input() == 'q':
             exit(1)
         else:
             main()
+    pass
 
-# main()
+
+main()
 
 # AudioTranscribe.AudioTranscribe.testFromAudioAsync(Audio('aphasiapatientW.wav', 16000, 'nl-NL'))
 
@@ -46,4 +63,4 @@ def main():
 
 # AudioTranscribe.AudioTranscribe.fromAudioFile(Audio('aphasiapatientW.wav', 16000, 'en-GB'))
 
-AudioTranscribe.AudioTranscribe.transcribeFromSlicedAudio(Audio('aphasiapatientW.wav', 16000, 'en-GB'))
+# AudioTranscribe.AudioTranscribe.transcribeFromSlicedAudio(Audio('aphasiapatientW.wav', 16000, 'en-GB'))
