@@ -1,21 +1,25 @@
-import os
-
-from pydub import AudioSegment
-
 import AudioTranscribe
 from Audio import Audio
-from Test import Test
 
+import sys
 
 def main():
     """
     To run the Main file from the terminal
     :return:
     """
-    filepath = input('Enter filepath \n')
-    hertz = int(input('Enter hertz \n'))
-    languageCode = input('Enter language code E.G. nl-NL or en-GB \n')
-    chooseMethod = int(input('1: Google Storage 2: Audio file Sliced 3: Audio file Async \n'))
+
+    # When the user provides system arguments at script startup, use those instead.
+    if len(sys.argv) > 1:
+        filepath = sys.argv[1]
+        hertz = int(sys.argv[2])
+        languageCode = sys.argv[3]
+        chooseMethod = int(sys.argv[4])
+    else:
+        filepath = input('Enter filepath \n')
+        hertz = int(input('Enter hertz \n'))
+        languageCode = input('Enter language code E.G. nl-NL or en-GB \n')
+        chooseMethod = int(input('1: Google Storage 2: Audio file Sliced 3: Audio file Async \n'))
 
     # TODO if else statements, maybe switch-case statement ... ?
     if chooseMethod == 1:
