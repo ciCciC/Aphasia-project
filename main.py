@@ -1,7 +1,7 @@
 
 import glob
 import os
-import AudioTranscribe
+from AudioTranscribe import AudioTranscribe
 from Audio import Audio
 from ConfigSlicing import ConfigSlicing
 
@@ -60,8 +60,8 @@ def main():
 
 # main()
 
-print(AudioTranscribe.AudioTranscribe.fromGoogleStorage(Audio('aphasiapatient.flac', 16000, 'en-GB')))
+AudioTranscribe.fromGoogleStorage(Audio(filename='woordentest', fileFormat='mp3', languageCode='nl-NL'), enable_word_time=True)
 
-# AudioTranscribe.AudioTranscribe.fromAudioFile(Audio('aphasiapatientW.wav', 16000, 'en-GB'))
+# AudioTranscribe.fromAudioFile(Audio('aphasiapatientW.wav', 16000, 'en-GB'))
 
-# AudioTranscribe.AudioTranscribe.transcribeFromSlicedAudio(Audio('aphasiapatientW.wav', 16000, 'en-GB'))
+# AudioTranscribe.transcribeFromSlicedAudio(Audio('aphasiapatientW.wav', 16000, 'en-GB'))

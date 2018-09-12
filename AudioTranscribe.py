@@ -6,16 +6,18 @@ from google.cloud.speech import types
 import os
 import io
 import wave
+import csv
 
 from pydub import AudioSegment
 
 import Credentials
+from store.datastore import datastore
 
 
 class AudioTranscribe:
 
     @staticmethod
-    def fromGoogleStorage(ConfigAudio):
+    def fromGoogleStorage(ConfigAudio, enable_word_time):
         """
         :param filename: filename of the audio file from Google Cloud Storage. The file has to be .FLAC or .WAV. Both has to be channel 1!!
         :param hertz: the hertz of the audio file
@@ -24,29 +26,38 @@ class AudioTranscribe:
         :return: an array of transscript Strings
         """
 
+        print('Adding audio file in progress.....')
+        datastore.addAudioFile(file_name=ConfigAudio.filename, fileFormat='mp3')
+
         client = speech.SpeechClient(credentials=Credentials.Credentials.getCredentials())
 
-        audio = types.RecognitionAudio(uri='gs://aphasia-project/'+ConfigAudio.filename.split('/')[-1])
+        audio = types.RecognitionAudio(uri='gs://aphasia-project/'+ConfigAudio.filename)
 
         config = types.RecognitionConfig(
             encoding=enums.RecognitionConfig.AudioEncoding.FLAC,
-            sample_rate_hertz=ConfigAudio.hertz,
-            profanity_filter=True,
-            language_code=ConfigAudio.languageCode)
+            sample_rate_hertz=16000,
+            profanity_filter=False,
+            language_code=ConfigAudio.languageCode,
+            enable_word_time_offsets=enable_word_time)
 
         operation = client.long_running_recognize(config, audio)
 
-        print('Timeout 90s...')
-
+        print('Transcribing in progress.....')
         response = operation.result(timeout=90)
 
-        text = []
+        text = [alternative for result in response.results for alternative in result.alternatives]
 
-        for result in response.results:
-            for alternative in result.alternatives:
-                text.append(alternative.transcript)
+        if enable_word_time:
+            print('CSV in progress.....')
+            AudioTranscribe.__save_in_csv(filename=ConfigAudio.filename, text=text)
+        else:
+            print('Txt in progress.....')
+            AudioTranscribe.__save_in_txt(filename=ConfigAudio.filename, text=text)
 
-        return text
+        print('Deleting audio file in progress.....')
+        datastore.deleteAudioFile(file_name=ConfigAudio.filename)
+
+        pass
 
 
     @staticmethod
@@ -238,3 +249,26 @@ class AudioTranscribe:
             if audio_slice.dBFS < silence_thresh or audio_slice.dBFS == -float('inf'):
                 # print('dBFS:{} - starttime:{} - endtime:{}'.format(audio_slice.dBFS, tmpJumpLeft, right))
                 return {'audiochunk': sound[start: tmpJumpLeft], 'leftpointer': tmpJumpLeft}
+
+
+    @staticmethod
+    def __save_in_csv(filename, text):
+        with open('textfiles/'+filename+'.csv', 'w') as csvfile:
+            fieldnames = ['starttime', 'endtime', 'word']
+            writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+
+            writer.writeheader()
+
+            for x in text:
+                for word_info in x.words:
+                    word = word_info.word
+                    start_time = word_info.start_time
+                    end_time = word_info.end_time
+                    writer.writerow({'starttime': start_time, 'endtime': end_time, 'word': word})
+
+    @staticmethod
+    def __save_in_txt(filename, text):
+        with open('textfiles/'+filename+'.txt', 'w') as txtfile:
+
+            for x in text:
+                txtfile.write(x.transcript + "\n")

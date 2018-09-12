@@ -47,11 +47,3 @@ from store import datastore
 #     plt.stem(data2, data1)
 #     plt.show()
 #     figure.savefig('signal_wave_dbfs.png')
-
-
-audioName = 'haunted'
-format = 'mp3'
-
-datastore.datastore.addAudioFile(source_file_name=audioName, fileFormat=format)
-
-datastore.datastore.list_storage_files()
