@@ -53,7 +53,15 @@ Download get-pip.py from <a href="https://pip.pypa.io/en/stable/installing/">HER
 1. Install Google Cloud Speech from the **terminal of your PyCharm SDK**<br>
 pip install --upgrade google-cloud-speech <br>
 
-[Test] Dont do this!<br>
+2. For being able to load mp3 EG for converting to .WAV or .FLAC extension we need the following<br>
+- Windows, download and install<br>
+https://ffmpeg.zeranoe.com/builds/ <br>
+
+- Mac, download homebrew and install<br>
+
+brew install ffmpeg --with-libvorbis --with-sdl2 --with-theora
+
+[Test] ONLY FOR KORAY !<br>
 create a virtual environment<br>
 cd project_folder<br>
 virtualenv <your-env-NAME><br>
