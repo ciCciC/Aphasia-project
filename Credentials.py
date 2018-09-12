@@ -5,6 +5,10 @@ from google.oauth2 import service_account
 class Credentials:
 
     @staticmethod
+    def getStorageName():
+        return 'aphasia-project'
+
+    @staticmethod
     def getCredentials():
         return service_account.Credentials.from_service_account_file(Credentials.__serviceCredentials())
 

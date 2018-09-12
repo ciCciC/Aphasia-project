@@ -5,7 +5,6 @@ from google.cloud.speech import types
 
 import os
 import io
-import glob
 import wave
 
 from pydub import AudioSegment
@@ -27,7 +26,7 @@ class AudioTranscribe:
 
         client = speech.SpeechClient(credentials=Credentials.Credentials.getCredentials())
 
-        audio = types.RecognitionAudio(uri='gs://aphasiaproject/'+ConfigAudio.filename.split('/')[-1])
+        audio = types.RecognitionAudio(uri='gs://aphasia-project/'+ConfigAudio.filename.split('/')[-1])
 
         config = types.RecognitionConfig(
             encoding=enums.RecognitionConfig.AudioEncoding.FLAC,

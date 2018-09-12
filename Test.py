@@ -1,26 +1,10 @@
-import glob
-import io
-import os
-import wave
-import pyaudio
-import numpy as np
-from matplotlib import pyplot as plt
-import numpy as np
-from matplotlib import pyplot as plt
-
-file_name = 'aphasiapatientW.wav'
-
-file_path = os.path.join(
-            os.path.dirname(__file__),
-            'audio', file_name)
+from store import datastore
 
 # f = wave.open(file_path, 'r')
 
 # with io.open(file_path, 'rb') as audio_file:
 #     contentSize = audio_file.read()
-#
-#
-#
+
 # signal = contentSize
 # signal = np.fromstring(signal, 'Int16')
 
@@ -47,22 +31,27 @@ file_path = os.path.join(
 #                             nieuweBestandnaam,
 #                             'wav')
 
+# def drawGraph(data):
+#     data1 = []
+#     data2 = []
+#     for x in data:
+#         data1.append(x[0])
+#         data2.append(x[1])
+#
+#     colors = np.random.rand(120)
+#     # plt.figure(1)
+#     plt.title('Signal Wave...')
+#     # plt.scatter(data2, data1, c=colors, alpha=5.5)
+#     figure = plt.gcf()
+#     plt.subplot()
+#     plt.stem(data2, data1)
+#     plt.show()
+#     figure.savefig('signal_wave_dbfs.png')
 
 
+audioName = 'haunted'
+format = 'mp3'
 
-def drawGraph(data):
-    data1 = []
-    data2 = []
-    for x in data:
-        data1.append(x[0])
-        data2.append(x[1])
+datastore.datastore.addAudioFile(source_file_name=audioName, fileFormat=format)
 
-    colors = np.random.rand(120)
-    # plt.figure(1)
-    plt.title('Signal Wave...')
-    # plt.scatter(data2, data1, c=colors, alpha=5.5)
-    figure = plt.gcf()
-    plt.subplot()
-    plt.stem(data2, data1)
-    plt.show()
-    figure.savefig('signal_wave_dbfs.png')
+datastore.datastore.list_storage_files()
