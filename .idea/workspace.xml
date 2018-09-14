@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="91a0b08a-ada0-4a79-ba8c-e81caefc9651" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AudioConverter.py" beforeDir="false" afterPath="$PROJECT_DIR$/AudioConverter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AudioTranscribe.py" beforeDir="false" afterPath="$PROJECT_DIR$/AudioTranscribe.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -74,23 +74,23 @@
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.4" value="4" />
-          <entry key="project.open.time.5" value="15" />
+          <entry key="project.open.time.5" value="16" />
           <entry key="project.open.time.6" value="6" />
           <entry key="project.open.time.7" value="2" />
-          <entry key="project.opened" value="29" />
+          <entry key="project.opened" value="30" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="21" />
-          <entry key="py" value="13737" />
-          <entry key="txt" value="855" />
+          <entry key="py" value="13753" />
+          <entry key="txt" value="868" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="876" />
-          <entry key="Python" value="13737" />
+          <entry key="PLAIN_TEXT" value="889" />
+          <entry key="Python" value="13753" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -100,7 +100,7 @@
           <entry key="activate" value="1" />
           <entry key="png" value="2" />
           <entry key="pstat" value="1" />
-          <entry key="py" value="75" />
+          <entry key="py" value="77" />
           <entry key="rst" value="3" />
           <entry key="txt" value="6" />
         </counts>
@@ -110,7 +110,7 @@
           <entry key="Image" value="2" />
           <entry key="PLAIN_TEXT" value="10" />
           <entry key="Profiler Session" value="1" />
-          <entry key="Python" value="75" />
+          <entry key="Python" value="77" />
           <entry key="ReST" value="3" />
         </counts>
       </usages-collector>
@@ -118,11 +118,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="129">
-              <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+            <state relative-caret-position="76">
+              <caret line="42" column="58" selection-start-line="42" selection-start-column="48" selection-end-line="42" selection-end-column="58" />
               <folding>
                 <element signature="e#1#12#0" expanded="true" />
               </folding>
@@ -133,11 +133,29 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AudioTranscribe.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="38" column="35" selection-start-line="38" selection-start-column="35" selection-end-line="38" selection-end-column="35" />
+            <state relative-caret-position="286">
+              <caret line="29" column="28" selection-start-line="29" selection-start-column="28" selection-end-line="29" selection-end-column="28" />
               <folding>
                 <element signature="e#1#32#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/store/datastore.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="159">
+              <caret line="19" column="53" selection-start-line="19" selection-start-column="53" selection-end-line="19" selection-end-column="53" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/AudioConverter.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="253">
+              <caret line="60" column="67" lean-forward="true" selection-start-line="60" selection-start-column="67" selection-end-line="60" selection-end-column="67" />
             </state>
           </provider>
         </entry>
@@ -188,15 +206,15 @@
         <option value="$PROJECT_DIR$/Test2.py" />
         <option value="$PROJECT_DIR$/Credentials.py" />
         <option value="$PROJECT_DIR$/service/AudioConverter.py" />
-        <option value="$PROJECT_DIR$/AudioConverter.py" />
         <option value="$PROJECT_DIR$/store/store.py" />
         <option value="$PROJECT_DIR$/store/datastore.py" />
         <option value="$PROJECT_DIR$/Audio.py" />
         <option value="$PROJECT_DIR$/Test.py" />
         <option value="$PROJECT_DIR$/Test.py" />
-        <option value="$PROJECT_DIR$/AudioTranscribe.py" />
-        <option value="$PROJECT_DIR$/AudioTranscribe.py" />
         <option value="$PROJECT_DIR$/main.py" />
+        <option value="$PROJECT_DIR$/AudioTranscribe.py" />
+        <option value="$PROJECT_DIR$/AudioTranscribe.py" />
+        <option value="$PROJECT_DIR$/AudioConverter.py" />
       </list>
     </option>
   </component>
@@ -497,13 +515,21 @@
       <option name="project" value="LOCAL" />
       <updated>1536750703370</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Little update">
+      <created>1536917577869</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1536917577869</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="77" y="16" width="1555" height="1018" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25842696" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26173165" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -517,7 +543,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5003283" side_tool="true" weight="0.34057143" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4996717" visible="true" weight="0.50863934" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.4996717" visible="true" weight="0.50863934" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.329849" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -551,7 +577,8 @@
     <MESSAGE value="Update: code cleaning, better user interface for Terminal." />
     <MESSAGE value="Rearranged folder structure" />
     <MESSAGE value="Fixed workspace xml file,&#10;Added a new file named 'storage'" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed workspace xml file,&#10;Added a new file named 'storage'" />
+    <MESSAGE value="Little update" />
+    <option name="LAST_COMMIT_MESSAGE" value="Little update" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/service/__init__.py" />
@@ -712,20 +739,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AudioConverter.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="59">
-          <caret line="40" column="8" selection-start-line="40" selection-start-column="8" selection-end-line="40" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/store/datastore.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="19" column="55" lean-forward="true" selection-start-line="19" selection-start-column="55" selection-end-line="19" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Test.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="675">
@@ -735,8 +748,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
-          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+        <state relative-caret-position="76">
+          <caret line="42" column="58" selection-start-line="42" selection-start-column="48" selection-end-line="42" selection-end-column="58" />
           <folding>
             <element signature="e#1#12#0" expanded="true" />
           </folding>
@@ -745,11 +758,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/AudioTranscribe.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="38" column="35" selection-start-line="38" selection-start-column="35" selection-end-line="38" selection-end-column="35" />
+        <state relative-caret-position="286">
+          <caret line="29" column="28" selection-start-line="29" selection-start-column="28" selection-end-line="29" selection-end-column="28" />
           <folding>
             <element signature="e#1#32#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/store/datastore.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="19" column="53" selection-start-line="19" selection-start-column="53" selection-end-line="19" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AudioConverter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="60" column="67" lean-forward="true" selection-start-line="60" selection-start-column="67" selection-end-line="60" selection-end-column="67" />
         </state>
       </provider>
     </entry>
