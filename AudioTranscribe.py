@@ -27,7 +27,7 @@ class AudioTranscribe:
         """
 
         print('Adding audio file in progress.....')
-        datastore.addAudioFile(file_name=ConfigAudio.filename, fileFormat='mp3')
+        datastore.addAudioFile(file_name=ConfigAudio.filename, fileFormat=ConfigAudio.fileFormat)
 
         client = speech.SpeechClient(credentials=Credentials.Credentials.getCredentials())
 

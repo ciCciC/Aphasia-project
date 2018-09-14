@@ -58,7 +58,7 @@ class AudioConverter:
 
         changedAudio = audio.set_frame_rate(16000).set_channels(1)
 
-        tempPath = os.path.join(os.path.dirname(__file__), 'temporary/')
+        tempPath = os.path.join(os.path.dirname(__file__), 'temp/')
 
         changedAudio.export(tempPath + filename + '.' + toFormat, format=toFormat)
 
