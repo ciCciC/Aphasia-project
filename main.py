@@ -39,7 +39,10 @@ def main():
 
 
     if chooseMethod == 1:
-        AudioTranscribe.AudioTranscribe.fromGoogleStorage(Audio(filepath, hertz, languageCode))
+        AudioTranscribe.fromGoogleStorage(Audio(filename='woordentest',
+                                                fileFormat='mp3',
+                                                languageCode='nl-NL'),
+                                          enable_word_time=True)
 
     elif chooseMethod == 2:
         AudioTranscribe.AudioTranscribe.fromAudioFile(Audio(filepath, hertz, languageCode))
