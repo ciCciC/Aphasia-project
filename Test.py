@@ -1,3 +1,5 @@
+from AudioConverter import AudioConverter
+from AudioTranscribe import AudioTranscribe
 from store import datastore
 
 # f = wave.open(file_path, 'r')
@@ -47,3 +49,17 @@ from store import datastore
 #     plt.stem(data2, data1)
 #     plt.show()
 #     figure.savefig('signal_wave_dbfs.png')
+
+# print(AudioConverter.convert_Audio('audiozondag', 'wav', 'wav'))
+
+from itertools import permutations
+
+perm = permutations(['a', 'x', 'v', 'f', 'u', '%', '^', '$'])
+text = list(perm)
+
+filename = 'lolz'
+
+with open('textfiles/' + filename + '.txt', 'w') as txtfile:
+    for x in text:
+        tmp = ''.join(x)
+        txtfile.write(str(tmp) + '@hotmail.com' + "\n")

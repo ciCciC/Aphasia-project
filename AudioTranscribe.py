@@ -38,7 +38,8 @@ class AudioTranscribe:
             sample_rate_hertz=16000,
             profanity_filter=False,
             language_code=ConfigAudio.languageCode,
-            enable_word_time_offsets=enable_word_time)
+            enable_word_time_offsets=enable_word_time,
+            enable_automatic_punctuation=False)
 
         operation = client.long_running_recognize(config, audio)
 
@@ -255,20 +256,28 @@ class AudioTranscribe:
     def __save_in_csv(filename, text):
         with open('textfiles/'+filename+'.csv', 'w') as csvfile:
             fieldnames = ['starttime', 'endtime', 'word']
-            writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
 
-            writer.writeheader()
+            # writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+
+            writer = csv.writer(csvfile, delimiter='\t')
+            writer.writerow(fieldnames)
 
             for x in text:
                 for word_info in x.words:
                     word = word_info.word
                     start_time = word_info.start_time
                     end_time = word_info.end_time
-                    writer.writerow({'starttime': start_time, 'endtime': end_time, 'word': word})
+
+                    writer.writerow([start_time.seconds + start_time.nanos * 1e-9, end_time.seconds + start_time.nanos * 1e-9, word])
+
+                    # writer.writerow({'starttime': start_time, 'endtime': end_time, 'word': word})
+
+
 
     @staticmethod
     def __save_in_txt(filename, text):
         with open('textfiles/'+filename+'.txt', 'w') as txtfile:
 
             for x in text:
+                print(x.transcript+'\n')
                 txtfile.write(x.transcript + "\n")
