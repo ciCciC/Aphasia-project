@@ -1,0 +1,801 @@
+starttime,endtime,word
+,"seconds: 5
+nanos: 800000000
+",Hallo
+"seconds: 5
+nanos: 800000000
+","seconds: 7
+nanos: 800000000
+",welkom
+"seconds: 7
+nanos: 800000000
+","seconds: 8
+nanos: 500000000
+",bij
+"seconds: 8
+nanos: 500000000
+","seconds: 9
+",woord
+"seconds: 9
+","seconds: 9
+nanos: 800000000
+",voor
+"seconds: 9
+nanos: 800000000
+","seconds: 10
+",woord
+"seconds: 10
+","seconds: 11
+nanos: 600000000
+",Dit
+"seconds: 11
+nanos: 600000000
+","seconds: 12
+nanos: 200000000
+",is
+"seconds: 12
+nanos: 200000000
+","seconds: 12
+nanos: 800000000
+",les
+"seconds: 12
+nanos: 800000000
+","seconds: 13
+nanos: 100000000
+",1
+"seconds: 13
+nanos: 100000000
+","seconds: 14
+nanos: 700000000
+",hoe
+"seconds: 14
+nanos: 700000000
+","seconds: 15
+",heet
+"seconds: 15
+","seconds: 15
+nanos: 200000000
+",jij
+"seconds: 17
+","seconds: 18
+nanos: 400000000
+",Ik
+"seconds: 19
+nanos: 400000000
+","seconds: 19
+nanos: 800000000
+",Hey
+"seconds: 19
+nanos: 800000000
+","seconds: 20
+nanos: 800000000
+",Miriam
+"seconds: 22
+nanos: 200000000
+","seconds: 23
+",Mirjam
+"seconds: 23
+","seconds: 23
+nanos: 700000000
+",is
+"seconds: 23
+nanos: 700000000
+","seconds: 24
+nanos: 800000000
+",de
+"seconds: 24
+nanos: 800000000
+","seconds: 25
+nanos: 100000000
+",naam
+"seconds: 27
+nanos: 200000000
+","seconds: 27
+nanos: 500000000
+",de
+"seconds: 27
+nanos: 500000000
+","seconds: 27
+nanos: 900000000
+",naam
+"seconds: 30
+nanos: 700000000
+","seconds: 31
+nanos: 100000000
+",Ik
+"seconds: 31
+nanos: 100000000
+","seconds: 32
+",heet
+"seconds: 32
+","seconds: 32
+nanos: 900000000
+",Miriam
+"seconds: 34
+","seconds: 34
+nanos: 400000000
+",ik
+"seconds: 34
+nanos: 400000000
+","seconds: 34
+nanos: 700000000
+",ben
+"seconds: 34
+nanos: 700000000
+","seconds: 35
+",docent
+"seconds: 35
+","seconds: 36
+nanos: 500000000
+",bij
+"seconds: 36
+nanos: 500000000
+","seconds: 37
+nanos: 500000000
+",het
+"seconds: 37
+nanos: 500000000
+","seconds: 38
+nanos: 100000000
+",alfa-college
+"seconds: 40
+nanos: 900000000
+","seconds: 41
+nanos: 200000000
+",hoe
+"seconds: 41
+nanos: 200000000
+","seconds: 41
+nanos: 900000000
+",heet
+"seconds: 41
+nanos: 900000000
+","seconds: 42
+nanos: 400000000
+",jij
+"seconds: 46
+nanos: 200000000
+","seconds: 46
+nanos: 900000000
+",hoe
+"seconds: 46
+nanos: 900000000
+","seconds: 47
+nanos: 300000000
+",heet
+"seconds: 47
+nanos: 300000000
+","seconds: 47
+nanos: 500000000
+",jij
+"seconds: 47
+nanos: 500000000
+","seconds: 49
+nanos: 100000000
+",Ik
+"seconds: 49
+nanos: 100000000
+","seconds: 49
+nanos: 600000000
+",heet
+"seconds: 49
+nanos: 600000000
+","seconds: 50
+nanos: 300000000
+",Rick
+"seconds: 50
+nanos: 300000000
+","seconds: 51
+nanos: 100000000
+",Jij
+"seconds: 51
+nanos: 100000000
+","seconds: 51
+nanos: 700000000
+",heet
+"seconds: 51
+nanos: 700000000
+","seconds: 52
+nanos: 200000000
+",Rick
+"seconds: 52
+nanos: 200000000
+","seconds: 54
+",Rick
+"seconds: 54
+","seconds: 54
+nanos: 700000000
+",is
+"seconds: 54
+nanos: 700000000
+","seconds: 55
+nanos: 200000000
+",de
+"seconds: 55
+nanos: 200000000
+","seconds: 55
+nanos: 500000000
+",naam
+"seconds: 57
+nanos: 600000000
+","seconds: 58
+nanos: 200000000
+",heet
+"seconds: 58
+nanos: 200000000
+","seconds: 58
+nanos: 600000000
+",ik
+"seconds: 58
+nanos: 600000000
+","seconds: 59
+nanos: 400000000
+",Rik
+"seconds: 59
+nanos: 400000000
+","seconds: 60
+nanos: 200000000
+",nee
+"seconds: 60
+nanos: 200000000
+","seconds: 60
+nanos: 900000000
+",nee
+"seconds: 60
+nanos: 900000000
+","seconds: 62
+nanos: 400000000
+",Ik
+"seconds: 62
+nanos: 400000000
+","seconds: 63
+nanos: 100000000
+",heet
+"seconds: 63
+nanos: 100000000
+","seconds: 63
+nanos: 800000000
+",Miriam
+"seconds: 64
+nanos: 800000000
+","seconds: 65
+nanos: 900000000
+",heet
+"seconds: 65
+nanos: 900000000
+","seconds: 66
+nanos: 200000000
+",jij
+"seconds: 66
+nanos: 200000000
+","seconds: 66
+nanos: 600000000
+",gek
+"seconds: 66
+nanos: 600000000
+","seconds: 67
+nanos: 200000000
+",ja
+"seconds: 67
+nanos: 200000000
+","seconds: 68
+nanos: 300000000
+",ja
+"seconds: 68
+nanos: 300000000
+","seconds: 69
+nanos: 400000000
+",jij
+"seconds: 69
+nanos: 400000000
+","seconds: 69
+nanos: 900000000
+",heet
+"seconds: 69
+nanos: 900000000
+","seconds: 70
+nanos: 300000000
+",Rick
+"seconds: 70
+nanos: 300000000
+","seconds: 71
+nanos: 500000000
+",Ik
+"seconds: 71
+nanos: 500000000
+","seconds: 72
+nanos: 600000000
+",heet
+"seconds: 72
+nanos: 600000000
+","seconds: 73
+nanos: 100000000
+",Miriam
+"seconds: 74
+nanos: 300000000
+","seconds: 74
+nanos: 600000000
+",hoe
+"seconds: 74
+nanos: 600000000
+","seconds: 75
+nanos: 400000000
+",heet
+"seconds: 75
+nanos: 400000000
+","seconds: 76
+",jij
+"seconds: 78
+nanos: 800000000
+","seconds: 79
+nanos: 200000000
+",Ik
+"seconds: 79
+nanos: 200000000
+","seconds: 79
+nanos: 600000000
+",heet
+"seconds: 79
+nanos: 600000000
+","seconds: 80
+nanos: 100000000
+",Mirjam
+"seconds: 81
+nanos: 400000000
+","seconds: 81
+nanos: 800000000
+",Ik
+"seconds: 81
+nanos: 800000000
+","seconds: 82
+nanos: 100000000
+",ben
+"seconds: 82
+nanos: 100000000
+","seconds: 82
+nanos: 400000000
+",docent
+"seconds: 84
+nanos: 500000000
+","seconds: 85
+nanos: 700000000
+",Jij
+"seconds: 85
+nanos: 700000000
+","seconds: 87
+nanos: 100000000
+",bent
+"seconds: 87
+nanos: 100000000
+","seconds: 87
+nanos: 700000000
+",cursist
+"seconds: 89
+nanos: 800000000
+","seconds: 91
+",jij
+"seconds: 91
+","seconds: 92
+",bent
+"seconds: 92
+","seconds: 92
+nanos: 500000000
+",cursist
+"seconds: 94
+nanos: 100000000
+","seconds: 94
+nanos: 500000000
+",ben
+"seconds: 94
+nanos: 500000000
+","seconds: 95
+",ik
+"seconds: 95
+","seconds: 95
+nanos: 800000000
+",cursist
+"seconds: 95
+nanos: 800000000
+","seconds: 96
+nanos: 500000000
+",nee
+"seconds: 96
+nanos: 500000000
+","seconds: 98
+nanos: 400000000
+",ik
+"seconds: 98
+nanos: 400000000
+","seconds: 98
+nanos: 700000000
+",ben
+"seconds: 98
+nanos: 700000000
+","seconds: 98
+nanos: 900000000
+",docent
+"seconds: 100
+nanos: 800000000
+","seconds: 101
+nanos: 300000000
+",ben
+"seconds: 101
+nanos: 300000000
+","seconds: 101
+nanos: 500000000
+",jij
+"seconds: 101
+nanos: 500000000
+","seconds: 102
+nanos: 200000000
+",cursist
+"seconds: 102
+nanos: 200000000
+","seconds: 103
+",ja
+"seconds: 103
+","seconds: 104
+",ik
+"seconds: 104
+","seconds: 104
+nanos: 500000000
+",ben
+"seconds: 104
+nanos: 500000000
+","seconds: 104
+nanos: 900000000
+",Koos
+"seconds: 104
+nanos: 900000000
+","seconds: 105
+nanos: 100000000
+",is
+"seconds: 105
+nanos: 100000000
+","seconds: 105
+nanos: 900000000
+",Tja
+"seconds: 105
+nanos: 900000000
+","seconds: 106
+nanos: 800000000
+",jij
+"seconds: 106
+nanos: 800000000
+","seconds: 107
+nanos: 200000000
+",bent
+"seconds: 107
+nanos: 200000000
+","seconds: 107
+nanos: 700000000
+",cursist
+"seconds: 109
+nanos: 100000000
+","seconds: 110
+nanos: 300000000
+",Rick
+"seconds: 110
+nanos: 300000000
+","seconds: 111
+",is
+"seconds: 111
+","seconds: 111
+nanos: 700000000
+",cursist
+"seconds: 111
+nanos: 700000000
+","seconds: 113
+nanos: 300000000
+",Jij
+"seconds: 113
+nanos: 300000000
+","seconds: 114
+nanos: 100000000
+",bent
+"seconds: 114
+nanos: 100000000
+","seconds: 114
+nanos: 600000000
+",cursist
+"seconds: 115
+nanos: 900000000
+","seconds: 116
+nanos: 400000000
+",Ik
+"seconds: 116
+nanos: 400000000
+","seconds: 117
+nanos: 800000000
+",ben
+"seconds: 117
+nanos: 800000000
+","seconds: 118
+nanos: 100000000
+",docent
+"seconds: 121
+nanos: 900000000
+","seconds: 122
+nanos: 400000000
+",Ik
+"seconds: 122
+nanos: 400000000
+","seconds: 123
+nanos: 400000000
+",zit
+"seconds: 124
+nanos: 800000000
+","seconds: 128
+nanos: 300000000
+",ik
+"seconds: 128
+nanos: 300000000
+","seconds: 129
+nanos: 100000000
+",sta
+"seconds: 131
+nanos: 100000000
+","seconds: 131
+nanos: 900000000
+",ik
+"seconds: 131
+nanos: 900000000
+","seconds: 132
+nanos: 200000000
+",ga
+"seconds: 132
+nanos: 200000000
+","seconds: 132
+nanos: 500000000
+",zitten
+"seconds: 135
+nanos: 800000000
+","seconds: 136
+nanos: 100000000
+",Ik
+"seconds: 136
+nanos: 100000000
+","seconds: 136
+nanos: 500000000
+",zit
+"seconds: 137
+nanos: 900000000
+","seconds: 138
+nanos: 900000000
+",ik
+"seconds: 138
+nanos: 900000000
+","seconds: 139
+nanos: 100000000
+",ga
+"seconds: 139
+nanos: 100000000
+","seconds: 139
+nanos: 600000000
+",staan
+"seconds: 140
+nanos: 500000000
+","seconds: 141
+nanos: 500000000
+",ga
+"seconds: 141
+nanos: 500000000
+","seconds: 142
+nanos: 300000000
+",staan
+"seconds: 143
+nanos: 900000000
+","seconds: 144
+nanos: 300000000
+",Ik
+"seconds: 144
+nanos: 300000000
+","seconds: 144
+nanos: 600000000
+",sta
+"seconds: 147
+nanos: 400000000
+","seconds: 147
+nanos: 700000000
+",ik
+"seconds: 147
+nanos: 700000000
+","seconds: 148
+nanos: 200000000
+",loop
+"seconds: 152
+nanos: 900000000
+","seconds: 154
+nanos: 100000000
+",ik
+"seconds: 154
+nanos: 100000000
+","seconds: 154
+nanos: 500000000
+",loop
+"seconds: 154
+nanos: 500000000
+","seconds: 155
+nanos: 400000000
+",naar
+"seconds: 155
+nanos: 400000000
+","seconds: 155
+nanos: 900000000
+",de
+"seconds: 155
+nanos: 900000000
+","seconds: 156
+",deur
+"seconds: 160
+nanos: 300000000
+","seconds: 160
+nanos: 700000000
+",de
+"seconds: 160
+nanos: 700000000
+","seconds: 161
+nanos: 100000000
+",deur
+"seconds: 163
+nanos: 400000000
+","seconds: 164
+nanos: 100000000
+",Ik
+"seconds: 164
+nanos: 100000000
+","seconds: 164
+nanos: 600000000
+",loop
+"seconds: 164
+nanos: 600000000
+","seconds: 165
+nanos: 700000000
+",naar
+"seconds: 165
+nanos: 700000000
+","seconds: 166
+nanos: 600000000
+",de
+"seconds: 166
+nanos: 600000000
+","seconds: 167
+nanos: 300000000
+",tafel
+"seconds: 168
+","seconds: 169
+nanos: 200000000
+",de
+"seconds: 169
+nanos: 200000000
+","seconds: 169
+nanos: 800000000
+",tafel
+"seconds: 171
+nanos: 700000000
+","seconds: 172
+nanos: 200000000
+",Ik
+"seconds: 172
+nanos: 200000000
+","seconds: 172
+nanos: 600000000
+",loop
+"seconds: 172
+nanos: 600000000
+","seconds: 173
+nanos: 700000000
+",naar
+"seconds: 173
+nanos: 700000000
+","seconds: 174
+nanos: 500000000
+",de
+"seconds: 174
+nanos: 500000000
+","seconds: 174
+nanos: 900000000
+",stoel
+"seconds: 176
+nanos: 700000000
+","seconds: 177
+nanos: 400000000
+",de
+"seconds: 177
+nanos: 400000000
+","seconds: 177
+nanos: 700000000
+",stoel
+"seconds: 180
+nanos: 300000000
+","seconds: 180
+nanos: 700000000
+",de
+"seconds: 180
+nanos: 700000000
+","seconds: 181
+nanos: 100000000
+",deur
+"seconds: 186
+nanos: 200000000
+","seconds: 186
+nanos: 500000000
+",de
+"seconds: 186
+nanos: 500000000
+","seconds: 187
+nanos: 200000000
+",tafel
+"seconds: 189
+nanos: 900000000
+","seconds: 190
+nanos: 200000000
+",de
+"seconds: 190
+nanos: 200000000
+","seconds: 190
+nanos: 600000000
+",stoel
+"seconds: 193
+nanos: 200000000
+","seconds: 194
+nanos: 300000000
+",ik
+"seconds: 194
+nanos: 300000000
+","seconds: 194
+nanos: 700000000
+",sta
+"seconds: 196
+nanos: 500000000
+","seconds: 198
+nanos: 500000000
+",ik
+"seconds: 198
+nanos: 500000000
+","seconds: 198
+nanos: 700000000
+",zit
+"seconds: 201
+nanos: 200000000
+","seconds: 201
+nanos: 700000000
+",Dit
+"seconds: 201
+nanos: 700000000
+","seconds: 202
+nanos: 100000000
+",was
+"seconds: 202
+nanos: 100000000
+","seconds: 202
+nanos: 700000000
+",les
+"seconds: 202
+nanos: 700000000
+","seconds: 202
+nanos: 900000000
+",1
+"seconds: 204
+nanos: 100000000
+","seconds: 204
+nanos: 700000000
+",dag
+"seconds: 206
+nanos: 100000000
+","seconds: 206
+nanos: 500000000
+",tot
+"seconds: 206
+nanos: 500000000
+","seconds: 206
+nanos: 800000000
+",de
+"seconds: 206
+nanos: 800000000
+","seconds: 207
+",volgende
+"seconds: 207
+","seconds: 207
+nanos: 600000000
+",les

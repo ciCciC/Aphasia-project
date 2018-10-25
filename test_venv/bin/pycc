@@ -1,0 +1,3 @@
+#!/Users/koray/PycharmProjects/AphasiaProject/test_venv/bin/python
+from numba.pycc import main
+main()

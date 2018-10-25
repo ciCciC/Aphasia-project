@@ -2,12 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="91a0b08a-ada0-4a79-ba8c-e81caefc9651" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/TestAudioMerge.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Alignment.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagenerator.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nanotime.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plot/TestFeatures.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plot/TestSpeechPy.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plot/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plot/plot_sequence_words.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reader.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AudioConverter.py" beforeDir="false" afterPath="$PROJECT_DIR$/AudioConverter.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AudioTranscribe.py" beforeDir="false" afterPath="$PROJECT_DIR$/AudioTranscribe.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Test.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/aphasiapatient.flac" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/aphasiapatientW.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/testExportFile.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/woord.flac" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/woordentest.mp3" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/Test.py" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,21 +29,28 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/Aphasia_project$AudioConverter.coverage" NAME="AudioConverter Coverage Results" MODIFIED="1536774897346" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Aphasia_project$Alignment.coverage" NAME="Alignment Coverage Results" MODIFIED="1537806946649" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/SpeechToTextApp$Test.coverage" NAME="Test Coverage Results" MODIFIED="1535837032886" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Aphasia_project$setup.coverage" NAME="setup Coverage Results" MODIFIED="1536005775585" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Google" />
-    <SUITE FILE_PATH="coverage/Aphasia_project$Test.coverage" NAME="Test Coverage Results" MODIFIED="1536011347338" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Aphasia_project$Test.coverage" NAME="Test Coverage Results" MODIFIED="1539976426142" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Aphasia_project$nanotime.coverage" NAME="nanotime Coverage Results" MODIFIED="1539290716410" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Aphasia_project$store.coverage" NAME="store Coverage Results" MODIFIED="1536776228651" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/store" />
     <SUITE FILE_PATH="coverage/Aphasia_project$TestAudioMerge.coverage" NAME="TestAudioMerge Coverage Results" MODIFIED="1537181814340" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Aphasia_project$Test__1_.coverage" NAME="Test (1) Coverage Results" MODIFIED="1537550665292" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Aphasia_project$Test__1_.coverage" NAME="Test (1) Coverage Results" MODIFIED="1538776627016" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Aphasia_project$Test2.coverage" NAME="Test2 Coverage Results" MODIFIED="1536015653333" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Aphasia_project$main.coverage" NAME="main Coverage Results" MODIFIED="1537688158509" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Aphasia_project$main.coverage" NAME="main Coverage Results" MODIFIED="1540236280552" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/SpeechToTextApp$StreamAudioUrl.coverage" NAME="StreamAudioUrl Coverage Results" MODIFIED="1535930025357" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/SpeechToTextApp$Test2.coverage" NAME="Test2 Coverage Results" MODIFIED="1535751719637" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Aphasia_project$Client.coverage" NAME="Client Coverage Results" MODIFIED="1535988541703" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Aphasia_project$datagenerator.coverage" NAME="datagenerator Coverage Results" MODIFIED="1540459000616" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Aphasia_project$TestFeatures.coverage" NAME="TestFeatures Coverage Results" MODIFIED="1540459108250" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/plot" />
+    <SUITE FILE_PATH="coverage/Aphasia_project$plot_sequence_words.coverage" NAME="plot_sequence_words Coverage Results" MODIFIED="1539867856993" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/plot" />
     <SUITE FILE_PATH="coverage/SpeechToTextApp$lolz.coverage" NAME="lolz Coverage Results" MODIFIED="1535713879615" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/SpeechToTextApp$Audio.coverage" NAME="Audio Coverage Results" MODIFIED="1535929792056" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Aphasia_project$AphasiaProject.coverage" NAME="AphasiaProject Coverage Results" MODIFIED="1536344304354" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/SpeechToTextApp$Test__1_.coverage" NAME="Test (1) Coverage Results" MODIFIED="1535835067697" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Aphasia_project$AudioTranscribe.coverage" NAME="AudioTranscribe Coverage Results" MODIFIED="1538778054029" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Aphasia_project$TestSpeechPy.coverage" NAME="TestSpeechPy Coverage Results" MODIFIED="1539938501012" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/plot" />
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="-451895047">
@@ -75,28 +94,31 @@
     <session id="1750660245">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="43" />
-          <entry key="project.open.time.0" value="3" />
-          <entry key="project.open.time.1" value="5" />
-          <entry key="project.open.time.3" value="1" />
-          <entry key="project.open.time.4" value="5" />
-          <entry key="project.open.time.5" value="18" />
-          <entry key="project.open.time.6" value="8" />
-          <entry key="project.open.time.7" value="3" />
-          <entry key="project.opened" value="43" />
+          <entry key="project.closed" value="86" />
+          <entry key="project.open.time.0" value="8" />
+          <entry key="project.open.time.1" value="16" />
+          <entry key="project.open.time.10" value="1" />
+          <entry key="project.open.time.3" value="3" />
+          <entry key="project.open.time.4" value="7" />
+          <entry key="project.open.time.5" value="19" />
+          <entry key="project.open.time.6" value="20" />
+          <entry key="project.open.time.7" value="10" />
+          <entry key="project.open.time.8" value="1" />
+          <entry key="project.open.time.9" value="1" />
+          <entry key="project.opened" value="86" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="21" />
-          <entry key="py" value="14718" />
-          <entry key="txt" value="868" />
+          <entry key="py" value="23375" />
+          <entry key="txt" value="902" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="889" />
-          <entry key="Python" value="14718" />
+          <entry key="PLAIN_TEXT" value="923" />
+          <entry key="Python" value="23375" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -104,19 +126,23 @@
           <entry key="INSTALLER" value="1" />
           <entry key="PKG-INFO" value="1" />
           <entry key="activate" value="1" />
-          <entry key="png" value="2" />
+          <entry key="csv" value="27" />
+          <entry key="json" value="2" />
+          <entry key="png" value="7" />
           <entry key="pstat" value="1" />
-          <entry key="py" value="86" />
+          <entry key="py" value="152" />
           <entry key="rst" value="3" />
-          <entry key="txt" value="6" />
+          <entry key="txt" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Image" value="2" />
-          <entry key="PLAIN_TEXT" value="10" />
+          <entry key="CSV" value="21" />
+          <entry key="Image" value="7" />
+          <entry key="JSON" value="2" />
+          <entry key="PLAIN_TEXT" value="17" />
           <entry key="Profiler Session" value="1" />
-          <entry key="Python" value="86" />
+          <entry key="Python" value="152" />
           <entry key="ReST" value="3" />
         </counts>
       </usages-collector>
@@ -125,64 +151,36 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/AudioConverter.py">
+        <entry file="file://$PROJECT_DIR$/datagenerator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="39" column="17" selection-start-line="39" selection-start-column="17" selection-end-line="39" selection-end-column="17" />
+            <state relative-caret-position="160">
+              <caret line="55" column="56" selection-start-line="55" selection-start-column="56" selection-end-line="55" selection-end-column="56" />
               <folding>
-                <element signature="e#0#11#0" expanded="true" />
+                <element signature="e#0#16#0" expanded="true" />
+                <marker date="1540458997261" expanded="true" signature="1906:1909" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/main.py">
+        <entry file="file://$PROJECT_DIR$/plot/TestFeatures.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="669">
-              <caret line="62" lean-forward="true" selection-start-line="62" selection-end-line="62" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/AudioTranscribe.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="41" column="47" lean-forward="true" selection-start-line="41" selection-start-column="47" selection-end-line="41" selection-end-column="47" />
+            <state relative-caret-position="821">
+              <caret line="115" column="41" lean-forward="true" selection-start-line="115" selection-start-column="41" selection-end-line="115" selection-end-column="41" />
               <folding>
-                <element signature="e#1#32#0" expanded="true" />
+                <element signature="e#0#16#0" expanded="true" />
+                <marker date="1540460170810" expanded="true" signature="2329:2330" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Test.py">
+        <entry file="file://$PROJECT_DIR$/plot/plot_sequence_words.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="624">
-              <caret line="53" selection-start-line="53" selection-end-line="53" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/store/datastore.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="19" column="56" selection-start-line="19" selection-start-column="56" selection-end-line="19" selection-end-column="56" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TestAudioMerge.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="19" selection-start-line="19" selection-end-line="19" />
-              <folding>
-                <element signature="e#0#30#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="1260">
+              <caret line="99" column="4" selection-start-line="99" selection-start-column="4" selection-end-line="99" selection-end-column="57" />
             </state>
           </provider>
         </entry>
@@ -199,6 +197,8 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>types</find>
+      <find>long</find>
+      <find>getTime</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$</dir>
@@ -238,12 +238,21 @@
         <option value="$PROJECT_DIR$/Audio.py" />
         <option value="$PROJECT_DIR$/temp/Test.py" />
         <option value="$PROJECT_DIR$/TestAudioMerge.py" />
+        <option value="$PROJECT_DIR$/Alignment.py" />
+        <option value="$PROJECT_DIR$/nanotime.py" />
+        <option value="$PROJECT_DIR$/reader.py" />
+        <option value="$PROJECT_DIR$/SpeechFeatures.py" />
+        <option value="$PROJECT_DIR$/plot/plot_sequence_words.py" />
+        <option value="$PROJECT_DIR$/plot/TestSpeechPy.py" />
+        <option value="$PROJECT_DIR$/Test.py" />
+        <option value="$PROJECT_DIR$/Test.py" />
+        <option value="$PROJECT_DIR$/textfilestest/nl-0023.csv" />
+        <option value="$PROJECT_DIR$/AudioTranscribe.py" />
+        <option value="$PROJECT_DIR$/AudioTranscribe.py" />
         <option value="$PROJECT_DIR$/AudioConverter.py" />
         <option value="$PROJECT_DIR$/main.py" />
-        <option value="$PROJECT_DIR$/Test.py" />
-        <option value="$PROJECT_DIR$/Test.py" />
-        <option value="$PROJECT_DIR$/AudioTranscribe.py" />
-        <option value="$PROJECT_DIR$/AudioTranscribe.py" />
+        <option value="$PROJECT_DIR$/datagenerator.py" />
+        <option value="$PROJECT_DIR$/plot/TestFeatures.py" />
       </list>
     </option>
   </component>
@@ -254,10 +263,9 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="73" />
-    <option name="y" value="32" />
-    <option name="width" value="1555" />
-    <option name="height" value="1018" />
+    <option name="x" value="28" />
+    <option name="width" value="1652" />
+    <option name="height" value="1050" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -276,12 +284,12 @@
             <path>
               <item name="Aphasia-project" type="b2602c69:ProjectViewProjectNode" />
               <item name="AphasiaProject" type="462c0819:PsiDirectoryNode" />
-              <item name="audio" type="462c0819:PsiDirectoryNode" />
+              <item name="plot" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Aphasia-project" type="b2602c69:ProjectViewProjectNode" />
               <item name="AphasiaProject" type="462c0819:PsiDirectoryNode" />
-              <item name="textfiles" type="462c0819:PsiDirectoryNode" />
+              <item name="textfilestest" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -316,30 +324,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.main">
-    <configuration name="AudioConverter" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Aphasia-project" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/AudioConverter.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Test (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.TestFeatures">
+    <configuration name="Test" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Aphasia-project" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -361,7 +347,51 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="TestAudioMerge" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="TestFeatures" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Aphasia-project" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/plot" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/plot/TestFeatures.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestSpeechPy" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Aphasia-project" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/plot" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/plot/TestSpeechPy.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="datagenerator" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Aphasia-project" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -374,7 +404,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/TestAudioMerge.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/datagenerator.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -405,42 +435,20 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="store" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Aphasia-project" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/store" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/store/datastore.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <list>
       <item itemvalue="Python.main" />
-      <item itemvalue="Python.Test (1)" />
-      <item itemvalue="Python.AudioConverter" />
-      <item itemvalue="Python.store" />
-      <item itemvalue="Python.TestAudioMerge" />
+      <item itemvalue="Python.TestSpeechPy" />
+      <item itemvalue="Python.datagenerator" />
+      <item itemvalue="Python.Test" />
+      <item itemvalue="Python.TestFeatures" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.TestFeatures" />
+        <item itemvalue="Python.datagenerator" />
         <item itemvalue="Python.main" />
-        <item itemvalue="Python.Test (1)" />
-        <item itemvalue="Python.TestAudioMerge" />
-        <item itemvalue="Python.store" />
-        <item itemvalue="Python.AudioConverter" />
+        <item itemvalue="Python.Test" />
+        <item itemvalue="Python.TestSpeechPy" />
       </list>
     </recent_temporary>
   </component>
@@ -574,20 +582,26 @@
       <option name="project" value="LOCAL" />
       <updated>1536917850928</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Little update">
+      <created>1537723409476</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1537723409476</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="125" y="32" width="1555" height="1018" extended-state="0" />
-    <editor active="true" />
+    <frame x="28" y="0" width="1652" height="1050" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24256444" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12608695" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32829374" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.47408208" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39956802" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.327551" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.31106472" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3989796" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -595,12 +609,12 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5003283" side_tool="true" weight="0.34057143" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4996717" weight="0.50863934" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4996717" weight="0.35386223" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.329849" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="SciView" order="3" weight="0.59787655" />
+      <window_info anchor="right" id="SciView" order="3" weight="0.24534161" />
       <window_info anchor="right" id="Database" order="4" />
       <window_info anchor="right" id="Coverage" order="5" side_tool="true" />
     </layout>
@@ -633,118 +647,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="Little update" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/venv/lib/python3.5/site-packages/google_cloud_speech-0.35.0.dist-info/namespace_packages.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/other/google-cloud-python/README.rst" />
-    <entry file="file://$PROJECT_DIR$/other/google-cloud-python/nox.py" />
-    <entry file="file://$PROJECT_DIR$/other/__init__.py" />
-    <entry file="file://$PROJECT_DIR$/other/google-cloud-python/__init__.py" />
-    <entry file="file://$PROJECT_DIR$/google-cloud-python/api_core/nox.py" />
-    <entry file="file://$PROJECT_DIR$/GoogleTest/texttospeech/google/cloud/texttospeech_v1/gapic/enums.py" />
-    <entry file="file://$PROJECT_DIR$/GoogleTest/texttospeech/google/cloud/texttospeech_v1beta1/gapic/enums.py" />
-    <entry file="file://$PROJECT_DIR$/GoogleTest/texttospeech/google/cloud/texttospeech_v1/gapic/text_to_speech_client.py" />
-    <entry file="file://$PROJECT_DIR$/Google/setup.py" />
-    <entry file="file://$PROJECT_DIR$/Google/google_cloud_speech.egg-info/namespace_packages.txt" />
-    <entry file="file://$PROJECT_DIR$/Google/google/cloud/speech.py" />
-    <entry file="file://$PROJECT_DIR$/Google/google/cloud/speech_v1/gapic/speech_client.py" />
-    <entry file="file://$PROJECT_DIR$/Google/README.rst" />
-    <entry file="file://$PROJECT_DIR$/modules/google/__init__.py" />
-    <entry file="file://$PROJECT_DIR$/modules/google/cloud/__init__.py" />
-    <entry file="file://$PROJECT_DIR$/modules/google/cloud/speech_v1/__init__.py" />
-    <entry file="file://$PROJECT_DIR$/venv/bin/activate">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-779" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/images/signal_wave_dbfs.png" />
-    <entry file="file://$PROJECT_DIR$/signal_wave_dbfs.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/venv/lib/python3.5/site-packages/matplotlib-2.2.3.dist-info/INSTALLER">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/venv/lib/python3.5/site-packages/google/cloud/speech_v1/helpers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="26" column="8" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydevd_bundle/pydevd_breakpoints.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="108" selection-start-line="108" selection-end-line="108" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/anaconda/lib/python3.5/codecs.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="349">
-          <caret line="331" selection-start-line="331" selection-end-line="331" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/venv/lib/python3.5/site-packages/google/api_core/grpc_helpers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="58">
-          <caret line="60" column="21" lean-forward="true" selection-start-line="60" selection-start-column="6" selection-end-line="60" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ConfigSlicing.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="42" lean-forward="true" selection-start-line="22" selection-start-column="42" selection-end-line="22" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/Test2.py" />
-    <entry file="file://$PROJECT_DIR$/test/Test.py" />
-    <entry file="file://$PROJECT_DIR$/AudioTest.py" />
-    <entry file="file://$PROJECT_DIR$/textfiles/nice.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/StreamAudioFileTest.py" />
-    <entry file="file://$PROJECT_DIR$/Transformer.py" />
-    <entry file="file://$PROJECT_DIR$/venv/lib/python3.5/site-packages/storage/servers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1737">
-          <caret line="17" column="23" lean-forward="true" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test_venv/lib/python3.7/site-packages/google/cloud/storage/client.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="153" column="54" lean-forward="true" selection-start-line="153" selection-start-column="54" selection-end-line="153" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/venv/lib/python3.5/site-packages/ffmpeg_python-0.1.16-py3.5.egg-info/installed-files.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/venv/lib/python3.5/site-packages/ffmpeg_python-0.1.16-py3.5.egg-info/dependency_links.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/venv/lib/python3.5/site-packages/ffmpeg_python-0.1.16-py3.5.egg-info/PKG-INFO">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="43" lean-forward="true" selection-start-line="17" selection-start-column="43" selection-end-line="17" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test_venv/lib/python3.7/site-packages/ffmpeg/_ffmpeg.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-111">
-          <caret line="58" column="40" selection-start-line="58" selection-start-column="40" selection-end-line="58" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test_venv/lib/python3.7/site-packages/ffmpeg/_run.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1915">
@@ -759,13 +661,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Credentials.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test_venv/lib/python3.7/site-packages/google/cloud/storage/blob.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
@@ -773,69 +668,276 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Audio.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/temp/Test.py" />
-    <entry file="file://$PROJECT_DIR$/test_venv/lib/python3.7/site-packages/pydub/audio_segment.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="1167" column="8" selection-start-line="1167" selection-start-column="8" selection-end-line="1167" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AudioConverter.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="39" column="17" selection-start-line="39" selection-start-column="17" selection-end-line="39" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/store/datastore.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="19" column="56" selection-start-line="19" selection-start-column="56" selection-end-line="19" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/TestAudioMerge.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
-          <folding>
-            <element signature="e#0#30#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="105">
+          <caret line="7" column="5" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_venv/lib/python3.7/site-packages/pydub/silence.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="498">
+          <caret line="93" column="20" selection-start-line="93" selection-start-column="20" selection-end-line="93" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Alignment.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-60">
+          <caret line="35" column="52" lean-forward="true" selection-start-line="35" selection-start-column="52" selection-end-line="35" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/textfiles/M15R2VS.json" />
+    <entry file="file://$PROJECT_DIR$/data.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="60" lean-forward="true" selection-start-column="60" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/textfiles/M15R2VS.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="22" lean-forward="true" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nanotime.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="424">
+          <caret line="176" column="34" lean-forward="true" selection-start-line="176" selection-start-column="34" selection-end-line="176" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/textfiles/F60E2VT8.csv" />
+    <entry file="file://$PROJECT_DIR$/plot/word_timestamp_plot.png" />
+    <entry file="file://$PROJECT_DIR$/resources/audiototext-c92821bf0af8.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plot/word_boundary_plot_zoom.png" />
+    <entry file="file://$PROJECT_DIR$/plot/word_boundary_plot.png" />
+    <entry file="file://$PROJECT_DIR$/Credentials.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/textfiles/woordentest.csv">
+      <provider selected="true" editor-type-id="csv-text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_venv/lib/python3.7/site-packages/librosa/util/files.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-6">
+          <caret line="16" column="4" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_venv/lib/python3.7/site-packages/librosa/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SpeechFeatures.py" />
+    <entry file="file://$PROJECT_DIR$/test_venv/lib/python3.7/site-packages/pydub/utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="40" column="4" selection-start-line="40" selection-start-column="4" selection-end-line="40" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_venv/lib/python3.7/site-packages/python_speech_features/sigproc.py" />
+    <entry file="file://$PROJECT_DIR$/Audio.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="36" lean-forward="true" selection-start-line="12" selection-start-column="36" selection-end-line="12" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ConfigSlicing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="26" lean-forward="true" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_venv/lib/python3.7/site-packages/pydub/audio_segment.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="702" column="16" lean-forward="true" selection-start-line="702" selection-start-column="16" selection-end-line="702" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_venv/lib/python3.7/site-packages/numpy/fft/helper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-241">
+          <caret line="159" column="23" selection-start-line="159" selection-start-column="23" selection-end-line="159" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_venv/lib/python3.7/site-packages/scipy/io/wavfile.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_venv/lib/python3.7/site-packages/librosa/core/audio.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="199">
+          <caret line="150" column="9" lean-forward="true" selection-start-line="150" selection-start-column="9" selection-end-line="150" selection-end-column="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="624">
-          <caret line="53" selection-start-line="53" selection-end-line="53" />
+        <state relative-caret-position="165">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/textfiles/nl-0023.csv" />
+    <entry file="file://$PROJECT_DIR$/store/datastore.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="19" column="54" lean-forward="true" selection-start-line="19" selection-start-column="54" selection-end-line="19" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AudioConverter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="443">
+          <caret line="64" column="12" lean-forward="true" selection-start-line="64" selection-start-column="12" selection-end-line="64" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/textfilestest/nl-0024.csv">
+      <provider selected="true" editor-type-id="csv-text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/textfiles/nl-0024.csv" />
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="146">
+          <caret line="29" column="30" lean-forward="true" selection-start-line="29" selection-start-column="30" selection-end-line="29" selection-end-column="30" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/AudioTranscribe.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="41" column="47" lean-forward="true" selection-start-line="41" selection-start-column="47" selection-end-line="41" selection-end-column="47" />
+        <state relative-caret-position="361">
+          <caret line="29" column="26" selection-start-line="29" selection-start-column="26" selection-end-line="29" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_venv/lib/python3.7/site-packages/scipy/fftpack/realtransforms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1429">
+          <caret line="262" column="4" selection-start-line="262" selection-start-column="4" selection-end-line="262" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_venv/lib/python3.7/site-packages/librosa/filters.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1151">
+          <caret line="179" column="4" selection-start-line="179" selection-start-column="4" selection-end-line="179" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_venv/lib/python3.7/site-packages/librosa/feature/spectral.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="478">
+          <caret line="1506" column="25" lean-forward="true" selection-start-line="1506" selection-start-column="25" selection-end-line="1506" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_venv/lib/python3.7/site-packages/matplotlib/pyplot.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="3117" column="16" selection-start-line="3117" selection-start-column="12" selection-end-line="3117" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_venv/lib/python3.7/site-packages/python_speech_features/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-832">
+          <caret line="32" column="15" lean-forward="true" selection-start-line="32" selection-start-column="11" selection-end-line="32" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_venv/lib/python3.7/site-packages/librosa/display.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7470">
+          <caret line="509" column="17" selection-start-line="509" selection-start-column="11" selection-end-line="509" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_venv/lib/python3.7/site-packages/speechpy/feature.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="881">
+          <caret line="260" column="4" selection-start-line="260" selection-start-column="4" selection-end-line="260" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/textfilestest/nl-0023.csv">
+      <provider selected="true" editor-type-id="csv-text-editor">
+        <state>
+          <caret column="12" selection-start-column="12" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plot/TestSpeechPy.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="14" column="35" lean-forward="true" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reader.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-257">
+          <caret line="45" column="40" lean-forward="true" selection-start-line="45" selection-start-column="40" selection-end-line="45" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plot/plot_sequence_words.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1260">
+          <caret line="99" column="4" selection-start-line="99" selection-start-column="4" selection-end-line="99" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/textfilestest/dataset.csv">
+      <provider editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="csv-text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="32" lean-forward="true" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/datagenerator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="55" column="56" selection-start-line="55" selection-start-column="56" selection-end-line="55" selection-end-column="56" />
           <folding>
-            <element signature="e#1#32#0" expanded="true" />
+            <element signature="e#0#16#0" expanded="true" />
+            <marker date="1540458997261" expanded="true" signature="1906:1909" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
+    <entry file="file://$PROJECT_DIR$/plot/TestFeatures.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="669">
-          <caret line="62" lean-forward="true" selection-start-line="62" selection-end-line="62" />
+        <state relative-caret-position="821">
+          <caret line="115" column="41" lean-forward="true" selection-start-line="115" selection-start-column="41" selection-end-line="115" selection-end-column="41" />
+          <folding>
+            <element signature="e#0#16#0" expanded="true" />
+            <marker date="1540460170810" expanded="true" signature="2329:2330" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>

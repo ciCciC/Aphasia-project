@@ -1,65 +1,38 @@
+import librosa
+from pydub import AudioSegment
+from pydub.playback import play
+import numpy as np
+
 from AudioConverter import AudioConverter
 from AudioTranscribe import AudioTranscribe
+from reader import reader
 from store import datastore
+import os
+import scipy.io.wavfile as wavfile
 
-# f = wave.open(file_path, 'r')
+def getTime(seconds, sample_rate):
+    return int(seconds * sample_rate)
 
-# with io.open(file_path, 'rb') as audio_file:
-#     contentSize = audio_file.read()
+diphoneDir = '/Users/koray/PycharmProjects/AphasiaProject/diphones/'
 
-# signal = contentSize
-# signal = np.fromstring(signal, 'Int16')
+filename = 'F60E2VT8'
+file_name = reader.getFile('audio/'+filename, 'wav')
+file_name = '/Users/koray/PycharmProjects/AphasiaProject/audiotest/nl-0023.wav'
+audio = AudioSegment.from_wav(file_name)
 
-# plt.figure(1)
-# plt.title('Signal Wave...')
-# plt.plot(signal)
-# plt.show()
+y, sr = librosa.load(file_name)
 
+toExport = y[getTime(2.55, sr):getTime(2.60, sr)]
+toExport2 = y[getTime(0.90, sr):getTime(0.95, sr)]
 
-# filedirectory = os.path.join(os.path.dirname(__file__),'temporary/')
-#
-# print(filedirectory)
-#
-# file_name = os.path.join(
-#             os.path.dirname(__file__),
-#             'audio', 'Bestandnaam.mp3')
-#
-# sound = AudioSegment.from_mp3(file_name)
-#
-# nieuweBestandnaam = 'nieuweBestandnaam'
-#
-# AudioTranscribe.exportAudio(sound,
-#                             filedirectory,
-#                             nieuweBestandnaam,
-#                             'wav')
+# print(toExport)
+export = np.concatenate((toExport, toExport2), axis=None)
+librosa.output.write_wav(diphoneDir+"mashup1.wav", toExport2, sr)
 
-# def drawGraph(data):
-#     data1 = []
-#     data2 = []
-#     for x in data:
-#         data1.append(x[0])
-#         data2.append(x[1])
-#
-#     colors = np.random.rand(120)
-#     # plt.figure(1)
-#     plt.title('Signal Wave...')
-#     # plt.scatter(data2, data1, c=colors, alpha=5.5)
-#     figure = plt.gcf()
-#     plt.subplot()
-#     plt.stem(data2, data1)
-#     plt.show()
-#     figure.savefig('signal_wave_dbfs.png')
+test1 = audio[2550:2600]
+test2 = audio[900:950]
 
-# print(AudioConverter.convert_Audio('audiozondag', 'wav', 'wav'))
+con = test1
+# con.export(diphoneDir+"mashup.wav", format="wav")
 
-from itertools import permutations
-
-perm = permutations(['a', 'x', 'v', 'f', 'u', '%', '^', '$'])
-text = list(perm)
-
-filename = 'lolz'
-
-with open('textfiles/' + filename + '.txt', 'w') as txtfile:
-    for x in text:
-        tmp = ''.join(x)
-        txtfile.write(str(tmp) + '@hotmail.com' + "\n")
+# play(con)

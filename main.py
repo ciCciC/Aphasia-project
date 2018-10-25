@@ -63,7 +63,11 @@ def main():
 
 # main()
 
-AudioTranscribe.fromGoogleStorage(Audio(filename='audiozondag', fileFormat='wav', languageCode='nl-NL'), enable_word_time=False)
+filename = 'nl-0024.wav'
+
+# AudioTranscribe.fromGoogleStorage(Audio(filename=filename, fileFormat='wav', languageCode='nl-NL'), enable_word_time=True)
+
+AudioTranscribe.GoogleSpeechToWords(Audio(filename=filename, fileFormat='wav', languageCode='nl-NL'))
 
 # AudioTranscribe.fromAudioFile(Audio('aphasiapatientW.wav', 16000, 'en-GB'))
 

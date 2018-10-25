@@ -7,6 +7,14 @@ from pydub import AudioSegment
 class AudioConverter:
 
     @staticmethod
+    def getAudio(filename, fromFormat):
+        file_name = os.path.join(
+            os.path.dirname(__file__),
+            'audio', filename + '.' + fromFormat)
+
+        return file_name
+
+    @staticmethod
     def getAudioFiles(fileExtension='*'):
         """
         :param fileExtension: default = *, this takes all extensions in de folder. Enter mp3, wav, flac
@@ -49,12 +57,28 @@ class AudioConverter:
 
         file_name = os.path.join(
             os.path.dirname(__file__),
-            'audio', filename + '.' + fromFormat)
+            'audiotest', filename + '.' + fromFormat)
 
         if fromFormat not in ['mp3', 'wav']:
             raise ValueError('Wrong extension! Enter mp3 or wav file.')
 
         audio = AudioSegment.from_mp3(file_name) if fromFormat == 'mp3' else AudioSegment.from_wav(file_name)
+
+        changedAudio = audio.set_frame_rate(16000).set_channels(1)
+
+        tempPath = os.path.join(os.path.dirname(__file__), 'temp/')
+
+        changedAudio.export(tempPath + filename + '.' + toFormat, format=toFormat)
+
+        return tempPath + filename + '.' + toFormat
+
+    @staticmethod
+    def convert_audio_aifc_to_wav(filename, toFormat):
+        file_name = os.path.join(
+            os.path.dirname(__file__),
+            'audio', filename + '.aifc')
+
+        audio = AudioSegment.from_file(file_name, 'aiff')
 
         changedAudio = audio.set_frame_rate(16000).set_channels(1)
 

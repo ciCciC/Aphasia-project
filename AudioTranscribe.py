@@ -38,27 +38,83 @@ class AudioTranscribe:
             sample_rate_hertz=16000,
             profanity_filter=False,
             language_code=ConfigAudio.languageCode,
-            enable_word_time_offsets=enable_word_time,
-            enable_automatic_punctuation=False)
+            enable_word_time_offsets=enable_word_time)
 
         operation = client.long_running_recognize(config, audio)
 
         print('Transcribing in progress.....')
         response = operation.result(timeout=90)
 
-        text = [alternative for result in response.results for alternative in result.alternatives]
+        # text = [alternative for result in response.results for alternative in result.alternatives]
 
         if enable_word_time:
-            print('CSV in progress.....')
-            AudioTranscribe.__save_in_csv(filename=ConfigAudio.filename, text=text)
+            # print('CSV in progress.....')
+            # AudioTranscribe.__save_in_csv(filename=ConfigAudio.filename, text=text)
+            # print('JSON in progress.....')
+            # AudioTranscribe.__save__in__dict(filename=ConfigAudio.filename, text=text)
+
+            for result in response.results:
+                alternative = result.alternatives[0]
+                print(u'Transcript: {}'.format(alternative.transcript))
+                print('Confidence: {}'.format(alternative.confidence))
+
+                for word_info in alternative.words:
+                    word = word_info.word
+                    start_time = word_info.start_time
+                    end_time = word_info.end_time
+                    print('Word: {}, start_time: {}, end_time: {}'.format(
+                        word,
+                        start_time.seconds + start_time.nanos * 1e-9,
+                        end_time.seconds + end_time.nanos * 1e-9))
         else:
             print('Txt in progress.....')
-            AudioTranscribe.__save_in_txt(filename=ConfigAudio.filename, text=text)
+            # AudioTranscribe.__save_in_txt(filename=ConfigAudio.filename, text=text)
 
         print('Deleting audio file in progress.....')
         datastore.deleteAudioFile(file_name=ConfigAudio.filename)
 
         pass
+
+
+    @staticmethod
+    def GoogleSpeechToWords(ConfigAudio):
+        file_name = os.path.join(
+            os.path.dirname(__file__),
+            'audiotest', ConfigAudio.filename)
+
+        name = ConfigAudio.filename.split('.')[0]
+
+        # Loads the audio into memory
+        with io.open(file_name, 'rb') as audio_file:
+            content = audio_file.read()
+            audio = types.RecognitionAudio(content=content)
+
+        client = speech.SpeechClient(credentials=Credentials.Credentials.getCredentials())
+
+        config = types.RecognitionConfig(
+            encoding=enums.RecognitionConfig.AudioEncoding.LINEAR16,
+            sample_rate_hertz=ConfigAudio.hertz,
+            language_code=ConfigAudio.languageCode,
+            enable_word_time_offsets=True)
+
+        operation = client.long_running_recognize(config, audio)
+
+        print('Waiting for operation to complete...')
+        result = operation.result(timeout=90)
+
+        for result in result.results:
+            alternative = result.alternatives[0]
+
+            AudioTranscribe.__save__in__dict(name, alternative.words)
+
+            # for word_info in alternative.words:
+            #     word = word_info.word
+            #     start_time = word_info.start_time
+            #     end_time = word_info.end_time
+            #     print('Word: {}, start_time: {}, end_time: {}'.format(
+            #         word,
+            #         start_time.seconds + start_time.nanos * 1e-9,
+            #         end_time.seconds + end_time.nanos * 1e-9))
 
 
     @staticmethod
@@ -272,6 +328,23 @@ class AudioTranscribe:
 
                     # writer.writerow({'starttime': start_time, 'endtime': end_time, 'word': word})
 
+    @staticmethod
+    def __save__in__dict(filename, words):
+        with open('textfiles/'+filename+'.csv', 'w') as jsonfile:
+            fieldnames = ['begin', 'end', 'word']
+
+            writer = csv.DictWriter(jsonfile, fieldnames=fieldnames)
+
+            writer.writeheader()
+
+            for word_info in words:
+                word = word_info.word
+                start_time = word_info.start_time
+                end_time = word_info.end_time
+
+                writer.writerow({'begin': start_time.seconds + start_time.nanos * 1e-9,
+                                 'end': end_time.seconds + end_time.nanos * 1e-9,
+                                 'word': word})
 
 
     @staticmethod
@@ -281,3 +354,37 @@ class AudioTranscribe:
             for x in text:
                 print(x.transcript+'\n')
                 txtfile.write(x.transcript + "\n")
+
+
+    @staticmethod
+    def howToJson(word, begin, end):
+        import json
+
+        data = {}
+        data['word'] = []
+        data['word'].append({
+            'name': 'Scott',
+            'website': 'stackabuse.com',
+            'from': 'Nebraska'
+        })
+        data['people'].append({
+            'name': 'Larry',
+            'website': 'google.com',
+            'from': 'Michigan'
+        })
+        data['people'].append({
+            'name': 'Tim',
+            'website': 'apple.com',
+            'from': 'Alabama'
+        })
+
+        # with open('data.txt', 'w') as outfile:
+        #     json.dump(data, outfile)
+
+        with open('data.txt') as json_file:
+            data = json.load(json_file)
+            for p in data['people']:
+                print('Name: ' + p['name'])
+                print('Website: ' + p['website'])
+                print('From: ' + p['from'])
+                print('')
