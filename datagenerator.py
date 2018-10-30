@@ -24,7 +24,7 @@ def getRegions(audio, side, boundary, frame_size, sample_rate):
     rightRegion = []
 
     if 'L' in side:
-        for walk in range(0, 5):
+        for walk in range(0, 3):
             frame = boundary - (frame_size * walk)
             left = getTime(frame - frame_size, sample_rate)
             right = getTime(frame, sample_rate)
@@ -32,7 +32,7 @@ def getRegions(audio, side, boundary, frame_size, sample_rate):
             leftRegion.append(tmpRegion)
 
     if 'R' in side:
-        for walk in range(0, 5):
+        for walk in range(0, 3):
             frame = boundary + (frame_size * walk)
             left = getTime(frame, sample_rate)
             right = getTime(frame + frame_size, sample_rate)
@@ -66,9 +66,9 @@ diphoneDir = '/Users/koray/PycharmProjects/AphasiaProject/diphones/'
 folderpath = '/Users/koray/PycharmProjects/AphasiaProject/textfilestest/'
 files = getFiles(folderpath)
 
-subRegion = 0.100
+subRegion = 0.020
 tsubRegion = subRegion / 2
-region = 0.500
+region = 0.050
 
 with open(folderpath + 'dataset.csv', 'w') as toWrite:
 
@@ -92,8 +92,11 @@ with open(folderpath + 'dataset.csv', 'w') as toWrite:
             boundaryL = float(prevW['end'])
             boundaryR = float(currW['begin'])
 
-            phonemeL = prevW['word'][-1]
-            phonemeR = currW['word'][0]
+            if boundaryL > 0.8 and boundaryL < 2.0:
+                print(boundaryL)
+
+            phonemeL = prevW['word'][-2]
+            phonemeR = currW['word'][1]
 
             tsubRegionL = audio[getTime(boundaryL-tsubRegion, sample_rate):getTime(boundaryL, sample_rate)]
             tsubRegionR = audio[getTime(boundaryR, sample_rate):getTime(boundaryR + tsubRegion, sample_rate)]

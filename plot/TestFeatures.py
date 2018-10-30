@@ -11,7 +11,10 @@ from librosa.display import specshow
 from python_speech_features import mfcc
 from python_speech_features import delta
 from python_speech_features import logfbank
+from python_speech_features import get_filterbanks
+from python_speech_features import fbank
 import pandas as pd
+from scipy.fftpack import dct
 
 
 def readDict(filepath):
@@ -40,58 +43,55 @@ def getLibrosaFeatures(region, sample_rate):
     return mfccs
 
 
-def getSpeechFeatures(signal, sample_rate):
-    mfcc_feat = mfcc(signal, sample_rate, winlen=0.010, nfft=580)
-    d_mfcc_feat = delta(mfcc_feat, 2)
-
-    # plt.hist(d_mfcc_feat[0:7,])
-
-    plt.title('Non librosa')
-    plt.tight_layout()
-
-    plt.show()
-
-    print(d_mfcc_feat)
-    print(d_mfcc_feat.shape)
-
-
 def getSpeechpyFeatures(signal, sample_rate):
-    mfcc = speechpy.feature.mfcc(signal, sampling_frequency=sample_rate, frame_length=0.025, frame_stride=0.01,
-                                 num_filters=26, fft_length=580, low_frequency=0, high_frequency=None)
+    pre_emphasis = 0.97
+    signal = np.append(signal[0], signal[1:] - pre_emphasis * signal[:-1])
+    # speechpy.feature.filterbanks(num_filter=26, sampling_freq=sample_rate)
+    # mfcc = speechpy.feature.mfcc(signal, sampling_frequency=sample_rate, num_filters=26, low_frequency=0, high_frequency=None)
+    #
+    # mfcc_feature_cube = speechpy.feature.extract_derivative_feature(mfcc)
 
-    mfcc_feature_cube = speechpy.feature.extract_derivative_feature(mfcc)
+    mfcc_feature_cube = speechpy.feature.mfcc(signal, sampling_frequency=sample_rate, num_filters=12)
 
     # print(mfcc_feature_cube[0].shape)
     #
-    # print(mfcc_feature_cube.shape)
+    print(mfcc_feature_cube.shape)
+
+    plt.hist(mfcc_feature_cube)
+
+    plt.title('Speechpy')
+    plt.tight_layout()
+
+    plt.show()
 
     return mfcc_feature_cube
-    # plt.hist(mfcc_feature_cube[:,:,0])
-    #
-    # plt.title('Speechpy')
-    # plt.tight_layout()
-    #
-    # plt.show()
 
-def test(signal, sample_rate):
-    temp3_energy = librosa.feature.melspectrogram(signal, sr=sample_rate, n_fft=580, n_mels=128).T
-    temp3_energy = np.log(temp3_energy)
-    temp3_mfcc = librosa.feature.mfcc(signal, sr=sample_rate, S=temp3_energy.T, n_mfcc=13, dct_type=2,
-                                      n_fft=580,
-                                      hop_length=0.01).T
 
-    plt.hist(temp3_mfcc)
+def getSpeechFeatures(signal, sample_rate):
 
-    plt.title('test')
+    mfcc_feat = mfcc(signal, sample_rate, winlen=0.20, nfft=512)
+    d_mfcc_feat = delta(mfcc_feat, 2)
+
+    for x in d_mfcc_feat:
+        plt.hist(x)
+
+    print(d_mfcc_feat)
+
+    plt.title('python_speech_features')
     plt.tight_layout()
 
     plt.show()
 
 
-def plotDiphone(signal, sample_rate):
+def plotBoundary(signal, sample_rate):
+
     TimeSample = np.linspace(0, len(signal) / sample_rate, num=len(signal))
 
+    pre_emphasis = 0.97
+    emphazied_signal = np.append(signal[0], signal[1:] - pre_emphasis * signal[:-1])
+
     plt.plot(TimeSample, signal, alpha=0.8, color='lime')
+    plt.plot(TimeSample, emphazied_signal, alpha=0.8, color='red')
 
     plt.title('Diphone')
     plt.xlabel('Time')
@@ -101,16 +101,28 @@ def plotDiphone(signal, sample_rate):
     plt.show()
 
 
+def exportAudio(region, folderpath, name, sample_rate):
+    exportName = folderpath + name + ".wav"
+    librosa.output.write_wav(exportName, region, sample_rate)
+
+
 folderpath = '/Users/koray/PycharmProjects/AphasiaProject/textfilestest/'
 diphones = readDict(folderpath+'dataset.csv')
 
 
-df=pd.read_csv(folderpath+'dataset.csv', sep=',', skiprows=1, names=['region', 'label', 'diphones', 'sample_rate'])
+df = pd.read_csv(folderpath+'dataset.csv', sep=',', skiprows=1, names=['region', 'label', 'diphones', 'sample_rate'])
 print(df['sample_rate'].dtypes)
 
-mijn = df['region'][0]
+data = df.loc[df.loc[:, 'label'] > 0, :]
 
-mijn = [float(i) for i in mijn.split('|')]
+mijn = np.array([float(i) for i in data.loc[0]['region'].split('|')])
+rate = data.loc[0]['sample_rate']
 
-for x in mijn:
-    print(x)
+# exportAudio(mijn, '/Users/koray/PycharmProjects/AphasiaProject/plot/', 'test', rate)
+
+print(mijn.shape)
+
+# test(mijn, rate)
+# getSpeechpyFeatures(mijn, rate)
+# plotBoundary(mijn, rate)
+getSpeechFeatures(mijn, rate)
