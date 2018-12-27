@@ -48,10 +48,6 @@ class AudioTranscribe:
         # text = [alternative for result in response.results for alternative in result.alternatives]
 
         if enable_word_time:
-            # print('CSV in progress.....')
-            # AudioTranscribe.__save_in_csv(filename=ConfigAudio.filename, text=text)
-            # print('JSON in progress.....')
-            # AudioTranscribe.__save__in__dict(filename=ConfigAudio.filename, text=text)
 
             for result in response.results:
                 alternative = result.alternatives[0]
@@ -106,15 +102,6 @@ class AudioTranscribe:
             alternative = result.alternatives[0]
 
             AudioTranscribe.__save__in__dict(name, alternative.words)
-
-            # for word_info in alternative.words:
-            #     word = word_info.word
-            #     start_time = word_info.start_time
-            #     end_time = word_info.end_time
-            #     print('Word: {}, start_time: {}, end_time: {}'.format(
-            #         word,
-            #         start_time.seconds + start_time.nanos * 1e-9,
-            #         end_time.seconds + end_time.nanos * 1e-9))
 
 
     @staticmethod
@@ -185,10 +172,6 @@ class AudioTranscribe:
                                     end_time.seconds))
 
                                 textDict.append({'word': word, 'starttime': str(start_time), 'endtime': str(end_time)})
-
-                            # print(u'Transcript: {}'.format(alternative.transcript))
-                            # text.append(alternative.transcript + '\n')
-                            # text.append(str(start_time) + " - " + str(end_time) + " - " + str(word) + "\n")
 
             except:
                 print('The last chunk is above 60 seconds.')
