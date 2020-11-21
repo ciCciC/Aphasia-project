@@ -1,12 +1,2 @@
 {
-  "type": "service_account",
-  "project_id": "audiototext-214920",
-  "private_key_id": "c92821bf0af8a86a8a9b9f894fbd5bd5ce128798",
-  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQDUxvIG9MlwcnZB\nIZIimR45mXYCmOM7ol2/KcPzEuZfmXzr/DAwylRCn6wj+0vCOBJPYtAiWZt6fsnZ\nCdqNJHNkN490ktok/XU50woQce7Vzmqi/86ka9/0GFhmrm1lFFdHJn/u4GvhTXVX\nhVeCgkz2UXsUDWT4lHQzsl7eGVFqJDEEvI129rPvrGMRz1kFJNYUS8SkRCzvyIPM\nvHDtU1133pEG9G55yAfUEkW2Xsx0oJNsrRwX88wd1vpFAeBiB2kOOJ5lQjtM75kK\nflsq5NpVYvCdm1jS35oqHJHGu8jqlaUm6LWrkqsc/57FwEuzWssHuG7tUCNPwVIZ\nTlYXU88rAgMBAAECggEAGzAr90E/x3tgv+l1vlpZYdvJmAMIL3O2TeRyJ4pX3zRX\nduH7wxLqGbSZxDk/5hp7Fc4XBqSeONSgSc2NXHFMFgIBddBZSSu31xfagTJwZb02\npAr9e8YAUQpBVXwz+fFTm6xVjDpR8/E4ArhvmlC4W9XFMnvpqy0bp2AYk4Ghr7xM\n1IgUuREBlthz2HvT2iFWs1k25ajRuIFlaF6F3ek+LBAeduECB/m8nGB6ffnQOdGF\n66LBUKl8sqlwwq2C6BT7fSeUNhKahfKlOY03TDc1yXvdtsd3EYf0HxNqi9Oj3thx\nj4fjtKmhC69KeRRWwhcCojtU3N2x3lxMlFlu0J3vNQKBgQDr3l4uzUZMnzyTCQ05\nvB3wKOFNWXZgpTVd62WtUH7gDeUZoDLwn6q+lyYvNR3qSW/m42eJODY5dmBT07a4\nCieFGU+gE+gmLzqSu4sRPTjvjni/4nhngp/nkDJ5wA15pfmSizTK2bJWvgJv5p8G\n1KfPf0sRIiO7fSw8cEKnUH7wvwKBgQDm8Amz8bH+WdDBTnFgQ3Zh9SPKVG/lJSiM\nFrTYzgzAdygYZ4/K1AsJwrR0QpCj24WLetjy+AeNTMCaFBEH5nueNi+F4wzQOCux\nYikSTD2ApYhVjGJTDTfGeyzIvB6bvWSkPtZOfg2AOX/oGwSEglK0fZS4/mrk4jQl\n+FgoxUpQlQKBgQCsMAprejmeyARthoccJcNpRj6ru+qaRSD/blAsxP3KTPp5yaRG\nWxlHx4n9nnY3SeMiF9LGrr2PF2bc60qRcgBFvyOMxduMvJ+y7KxqKlp9L3HhCtBB\nKG/ZmT/v948exla6b1tb1q7FejLHRAHF98qFxPSlDlotjgSUHpPaFv6EewKBgQC0\n6gTf6A9Fr/zfAuHExPTfxpg0MDO8coCyRjOEyN6qhG5vt+movraq/dI6Zc9D3nxf\nCW0d4nqgEimsSt4Qr1nWVqKiI33tPKPWAY0lXX6s4oDMa/63C1rPbb1mwCDGZveJ\nyARBV3SiJ+lw3oGKgUHjTaINzpnVFvQ9brE5t10BhQKBgQC5mxUO1LDkyq/GA2aa\nFBmuWYCNUi5ddgsxBx7ckSFm9vB0ACO7tPhjgBWHZutj3bJvmh6A83k7qD/W4tok\ncN6hPsQaEuy1ks9HI6oX5nr56joy4xWaBBvMy0DzgAsBLCWbqa6WPhTlmF8CRILY\nbbV3kwQRkLkDwuuxENlLNj82tw==\n-----END PRIVATE KEY-----\n",
-  "client_email": "aphasia@audiototext-214920.iam.gserviceaccount.com",
-  "client_id": "108720347817280252764",
-  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
-  "token_uri": "https://oauth2.googleapis.com/token",
-  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
-  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/aphasia%40audiototext-214920.iam.gserviceaccount.com"
 }
